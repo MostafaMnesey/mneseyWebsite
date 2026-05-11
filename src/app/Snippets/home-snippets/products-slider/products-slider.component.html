@@ -1,0 +1,71 @@
+<!-- products-slider.component.html -->
+<section class="overflow-hidden relative w-full mx-auto">
+  <p-galleria
+    [value]="slides"
+    [responsiveOptions]="galleriaResponsiveOptions"
+    [containerStyle]="{ 'max-width': '100%', height: '100%' }"
+    [showThumbnails]="false"
+    [showIndicators]="false"
+    [showItemNavigators]="true"
+    [circular]="true"
+    styleClass="custom-galleria"
+  >
+    <!-- [autoPlay]="true"
+    [transitionInterval]="5000" -->
+    <!-- Main item template -->
+    <ng-template pTemplate="item" let-slide>
+      <div
+        (click)="navigation(slide.routerLink)"
+        class="min-w-full flex flex-col justify-center items-center text-white h-full cursor-pointer"
+      >
+        <div class="h-full w-full py-10 lg:py-5" [ngClass]="slide.slideClass">
+          <div class="w-[80%] mx-auto h-full">
+            <div
+              class="grid md:grid-cols-2 h-full relative"
+              [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+            >
+              <img
+                class="w-[60%] md:w-[20%] absolute top-2 start-0"
+                [src]="slide.vectorImage"
+                alt=""
+              />
+              <!-- Content Section -->
+              <div
+                class="content text-white header z-10 min-h-[30vh] flex justify-center items-center"
+              >
+                <div class="absolute z-10">
+                  <p class="text-3xl mb-4">
+                    {{ "home.productsSlider.common.discover" | translate }}
+                  </p>
+                  <h2 class="text-4xl lg:text-6xl">{{ slide.title }}</h2>
+                </div>
+              </div>
+
+              <!-- Image Section -->
+              <div
+                class="flex items-center justify-center lg:h-full -order-1 md:order-none"
+              >
+                <a [routerLink]="slide.routerLink">
+                  <img
+                    [src]="slide.image"
+                    class="w-3/4 md:w-full relative z-20 block mx-auto"
+                    [alt]="slide.title"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- Custom navigation buttons -->
+    <ng-template pTemplate="previousitemicon">
+      <i class="pi pi-arrow-left" (click)="$event.stopPropagation()"></i>
+    </ng-template>
+
+    <ng-template pTemplate="nextitemicon">
+      <i class="pi pi-arrow-right" (click)="$event.stopPropagation()"></i>
+    </ng-template>
+  </p-galleria>
+</section>

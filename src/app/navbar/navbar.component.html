@@ -1,0 +1,424 @@
+<!-- @if (currentRoute == "/home") {
+  <nav
+    [ngClass]="{
+      'bg-transparent text-white':
+        !isScrolled(),
+      'bg-white text-gray-900  border-gray-200 shadow-min-[1212px] w-full':
+        isScrolled(),
+    }"
+    class="bg-transparent fixed top-0 z-50 pb-0.5 start-0 end-0"
+  >
+    <div
+      class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+    >
+
+      <a
+        class="flex items-center space-x-3 rtl:space-x-reverse"
+        routerLink="/home"
+      >
+        @if (!isScrolled()) {
+          <app-optimized-logo
+            name="logo-white.png"
+            [width]="250"
+            alt="Mentholatum Logo"
+            cssClass="w-[250px]">
+          </app-optimized-logo>
+        } @else {
+          <app-optimized-logo
+            name="logo.png"
+            [width]="250"
+            alt="Mentholatum Logo"
+            cssClass="w-[250px]">
+          </app-optimized-logo>
+        }
+      </a>
+
+      <button
+        (click)="toggleMenu()"
+        class="min-[1212px]:hidden max-[1211px] bg-white inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-transparent focus:ring-2 focus:ring-gray-200 focus:outline-none"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="h-5 w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+      </button>
+
+      <div
+        [ngClass]="{ hidden: !menuOpen(), block: menuOpen() }"
+        class="w-full min-[1212px]:block min-[1212px]:w-auto"
+      >
+        <ul
+          class="flex flex-col min-[1212px]:flex-row items-center min-[1212px]:space-x-4 p-4 min-[1212px]:p-0 bg-white min-[1212px]:bg-transparent"
+        >
+          <li class="relative group w-full min-[1212px]:w-auto">
+            <a
+              (click)="toggleDiscoverMenu($event)"
+              [ngClass]="{
+                'text-black min-[1212px]:text-white': !isScrolled(),
+                'text-gray-900': isScrolled(),
+              }"
+              class="hover:bg-transparent text-center rounded-sm px-3 py-2 cursor-pointer discover-button flex items-center justify-center min-[1212px]:justify-start"
+            >
+              {{ "nav.discover" | translate }}
+              <i class="pi pi-angle-down ml-1"></i>
+            </a>
+
+            <div
+              [ngClass]="{ hidden: !discoverMenuOpen(), block: discoverMenuOpen() }"
+              class="min-[1212px]:absolute min-[1212px]:top-full min-[1212px]:left-0 w-full min-[1212px]:w-48 bg-white shadow-md transition-all duration-300 z-40 discover-dropdown rounded-md mt-1"
+            >
+              <ul
+                class="flex flex-col items-center min-[1212px]:items-start py-2 text-sm font-medium text-gray-700"
+              >
+                <li
+                  class="hover:bg-transparent w-full text-center min-[1212px]:text-left py-2 px-4 cursor-pointer"
+                  routerLink="/about"
+                  (click)="closeDiscoverMenu()"
+                >
+                  {{ "nav.about" | translate }}
+                </li>
+                <li
+                  class="hover:bg-transparent w-full text-center min-[1212px]:text-left py-2 px-4 cursor-pointer"
+                  routerLink="/blogs"
+                  (click)="closeDiscoverMenu()"
+                >
+                  {{ "nav.blogs" | translate }}
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="hidden">
+            <ul
+              class="flex flex-col min-[1212px]:flex-row min-[1212px]:justify-between flex-wrap items-center px-8 py-4 text-sm font-medium text-gray-700"
+            >
+              <li
+                class="hover:text-blue-700 cursor-pointer w-full min-[1212px]:w-auto text-center py-2"
+                routerLink="/about"
+              >
+                {{ "nav.about" | translate }}
+              </li>
+              <li
+                class="hover:text-blue-700 cursor-pointer w-full min-[1212px]:w-auto text-center py-2"
+                routerLink="/blogs"
+              >
+                Blogs
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              (click)="toggleMenu()"
+              [routerLink]="'/brands'"
+              [ngClass]="{
+                'text-black min-[1212px]:text-white': !isScrolled(),
+                'text-gray-900': isScrolled(),
+              }"
+              class="block rounded-sm px-3 py-2"
+            >
+              {{ "nav.brands" | translate }}
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/checker"
+              (click)="toggleMenu()"
+              [ngClass]="{
+                'text-black min-[1212px]:text-white': !isScrolled(),
+                'text-gray-900': isScrolled(),
+              }"
+              class="block rounded-sm px-3 py-2"
+            >
+              {{ "nav.checker" | translate }}
+            </a>
+          </li>
+          <li>
+            <a
+              (click)="toggleMenu()"
+              routerLink="/shop"
+              [ngClass]="{
+                'text-black min-[1212px]:text-white': !isScrolled(),
+                'text-gray-900': isScrolled(),
+              }"
+              class="block rounded-sm px-3 py-2"
+            >
+              {{ "nav.shop" | translate }}
+            </a>
+          </li>
+          <li class="capitalize my-2 min-[1212px]:my-0">
+            <a
+              routerLink="/contact"
+              (click)="toggleMenu()"
+              style="color: white !important"
+              class="mx-2 bg-[#0067B1] hover:bg-[#00348D]  w-fit my-4 text-white px-6 py-3 rounded-full items-center gap-2 hover:bg-[#00348D] hover:text-white transition"
+            >
+              {{ "nav.contact" | translate }}
+            </a>
+          </li>
+          <li class="capitalize my-2 min-[1212px]:my-0">
+            <div class="relative z-20">
+              <button
+                (click)="toggleDropdown()"
+                [ngClass]="{
+                  'text-black min-[1212px]:text-white': !isScrolled(),
+                  'text-gray-900': isScrolled(),
+                }"
+                class="flex items-center gap-2 px-4 py-2 rounded focus:outline-none"
+              >
+                <i class="pi pi-globe"></i>
+                <i class="pi pi-angle-down"></i>
+              </button>
+              @if (dropdownOpen()){
+                <ul
+                  style="z-index: 999999"
+                  class="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded border border-gray-200"
+                >
+                  @for (lang of languages; track $index) {
+                    <li
+                      (click)="selectLanguage(lang)"
+                      class="px-4 py-2 cursor-pointer flex items-center gap-2 hover:bg-transparent"
+                      [ngClass]="{
+                        'text-black ': !isScrolled(),
+                        'text-gray-900': isScrolled(),
+                      }"
+                    >
+                      <i class="lucide lucide-globe w-5 h-5"></i>
+                      {{ lang.name }}
+                    </li>
+                  }
+                </ul>
+              }
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+} @else { -->
+<nav
+  class="border-b border-white w-full bg-white fixed"
+  style="z-index: 100 !important"
+>
+  <div
+    class="mx-auto flex page-width w-full items-center p-4 relative"
+    style="justify-content: space-between !important"
+  >
+    <a class="flex items-center space-x-3 rtl:space-x-reverse" routerLink="/">
+      <img src="/new/muk logo.png" class="w-[250px]" alt="" />
+
+      <!-- <app-optimized-logo
+        name="logo.png"
+        [width]="250"
+        alt="Mentholatum Logo"
+        cssClass="w-[250px]"
+      >
+      </app-optimized-logo> -->
+    </a>
+
+    <p-button
+      (onClick)="toggleMenu()"
+      class="min-[1212px]:hidden max-[1211px] ms-auto"
+      [text]="true"
+      icon="pi pi-bars"
+      size="small"
+      styleClass="!h-10 !w-10 !p-2 text-gray-500 hover:!bg-transparent focus:!ring-2 focus:!ring-gray-200"
+      ariaLabel="Open main menu"
+    >
+    </p-button>
+
+    <div class="hidden min-[1212px]:block min-[1212px]:w-auto ms-auto">
+      <ul class="flex flex-row items-center space-x-4">
+        <li class="relative group">
+          <p-button
+            #discoverBtn
+            (onClick)="toggleDiscoverMenu($event, discoverMenu)"
+            [text]="true"
+            styleClass="!hover:bg-primary-100 !text-center !rounded-sm !px-3 !py-2 discover-button !flex !items-center !justify-start"
+          >
+            <span>{{ "nav.discover" | translate }}</span>
+            <i class="pi pi-angle-down ml-1"></i>
+          </p-button>
+
+          <p-menu
+            #discoverMenu
+            [model]="discoverMenuItems"
+            [popup]="true"
+            styleClass="discover-dropdown !rounded-md !mt-1 !w-48"
+          >
+          </p-menu>
+        </li>
+
+        <li>
+          <p-button
+            (onClick)="navigateAndToggleMenu('/brands')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !block !rounded-sm !px-3 !py-2"
+          >
+            {{ "nav.brands" | translate }}
+          </p-button>
+        </li>
+
+        <li>
+          <p-button
+            (onClick)="navigateAndToggleMenu('/symptom-checker-v2')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !block !rounded-sm !px-3 !py-2"
+          >
+            {{ "nav.checker" | translate }}
+          </p-button>
+        </li>
+
+        <li>
+          <p-button
+            (onClick)="navigateAndToggleMenu('/shop')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !block !rounded-sm !px-3 !py-2"
+          >
+            {{ "nav.shop" | translate }}
+          </p-button>
+        </li>
+
+        <li class="capitalize">
+          <p-button
+            (onClick)="navigateAndToggleMenu('/contact')"
+            styleClass="!mx-2 !bg-[#0067B1] hover:bg-[#00348D]  !my-4 !text-white !px-6 !py-3 !rounded-full !items-center !gap-2 hover:!bg-[#00348D] hover:!text-white !transition"
+          >
+            {{ "nav.contact" | translate }}
+          </p-button>
+        </li>
+
+        <li class="capitalize">
+          <div class="relative z-20">
+            <p-button
+              #langBtn
+              (onClick)="toggleLanguageMenu($event, langMenu)"
+              [text]="true"
+              styleClass="!flex !items-center !gap-2 !px-4 !py-2 !rounded focus:!outline-none"
+            >
+              <i class="pi pi-globe"></i>
+              <i class="pi pi-angle-down"></i>
+            </p-button>
+
+            <p-menu
+              #langMenu
+              [model]="languageMenuItems"
+              [popup]="true"
+              styleClass="!absolute !right-0 !mt-2 !w-32 !z-[999999]"
+            >
+            </p-menu>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <p-drawer
+      [(visible)]="menuOpen"
+      position="left"
+      styleClass="!w-80 !bg-white"
+      [modal]="true"
+      [closeOnEscape]="true"
+    >
+      <ng-template pTemplate="header">
+        <div class="flex items-center justify-between w-full">
+          <h3 class="text-lg font-semibold text-gray-800">
+            {{ "nav.menu" | translate }}
+          </h3>
+        </div>
+      </ng-template>
+
+      <div class="flex flex-col space-y-4 mt-4">
+        <!-- Discover Section -->
+        <div class="border-b border-gray-200 pb-4">
+          <h4 class="text-sm font-medium text-gray-600 mb-3">
+            {{ "nav.discover" | translate }}
+          </h4>
+          <div class="flex flex-col space-y-2 ml-4">
+            <p-button
+              (onClick)="navigateAndToggleMenu('/about')"
+              [text]="true"
+              styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+            >
+              {{ "nav.about" | translate }}
+            </p-button>
+            <p-button
+              (onClick)="navigateAndToggleMenu('/blogs')"
+              [text]="true"
+              styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+            >
+              {{ "nav.blogs" | translate }}
+            </p-button>
+          </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="flex flex-col space-y-2">
+          <p-button
+            (onClick)="navigateAndToggleMenu('/brands')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+          >
+            {{ "nav.brands" | translate }}
+          </p-button>
+
+          <p-button
+            (onClick)="navigateAndToggleMenu('/symptom-checker-v2')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+          >
+            {{ "nav.checker" | translate }}
+          </p-button>
+
+          <p-button
+            (onClick)="navigateAndToggleMenu('/shop')"
+            [text]="true"
+            styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+          >
+            {{ "nav.shop" | translate }}
+          </p-button>
+        </div>
+
+        <!-- Contact Button -->
+        <div class="pt-4">
+          <p-button
+            (onClick)="navigateAndToggleMenu('/contact')"
+            styleClass="!bg-[#0067B1] hover:bg-[#00348D]  !w-full !text-white !px-6 !py-3 !rounded-full !items-center !gap-2 hover:!bg-[#00348D] hover:!text-white !transition"
+          >
+            {{ "nav.contact" | translate }}
+          </p-button>
+        </div>
+
+        <!-- Language Selector -->
+        <div class="border-t border-gray-200 pt-4">
+          <h4 class="text-sm font-medium text-gray-600 mb-3">
+            {{ "nav.lang" | translate }}
+          </h4>
+          <div class="flex flex-col space-y-2">
+            @for (lang of languages; track $index) {
+              <p-button
+                (onClick)="selectLanguage(lang)"
+                [text]="true"
+                styleClass="!text-black !hover:bg-primary-100 !justify-start !rounded-sm !px-3 !py-2 !w-full"
+              >
+                <i class="pi pi-globe mr-2"></i>
+                {{ lang.name }}
+              </p-button>
+            }
+          </div>
+        </div>
+      </div>
+    </p-drawer>
+  </div>
+</nav>
+<!-- } -->

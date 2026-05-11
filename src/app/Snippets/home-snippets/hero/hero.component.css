@@ -1,0 +1,9 @@
+.pi-youtube {
+    font-size: 1.1rem !important; /* equivalent to text-xl */
+  }
+  
+  @media (min-width: 768px) {
+    .pi-youtube {
+      font-size: 1.5rem !important; /* equivalent to text-3xl */
+    }
+  }

@@ -1,0 +1,185 @@
+<section class="page-width mx-auto px-4">
+  <section class="relative">
+    <!-- Social links section -->
+    <div
+      class="social_links flex md:gap-4 gap-8 items-center mt-5 lg:mt-0 justify-center lg:absolute end-0 top-0"
+    >
+      @if (socialMediaLinks.length) {
+        @for (item of socialMediaLinks; track $index) {
+          @if (this.id == item.id) {
+            <a
+              href="{{ item.facebook }}"
+              target="_blank"
+              class="text-2xl text-[#0067B1] hover:scale-105"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="{{ item.instagram }}"
+              target="_blank"
+              class="text-2xl text-[#0067B1] hover:scale-105"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="{{ item.snapchat }}"
+              target="_blank"
+              class="text-2xl text-[#0067B1] hover:scale-105"
+              ><i class="fab fa-snapchat"></i
+            ></a>
+            <a
+              href="{{ item.tiktok }}"
+              target="_blank"
+              class="text-2xl text-[#0067B1] hover:scale-105"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a
+              href="{{ item.youtube }}"
+              target="_blank"
+              class="text-2xl text-[#0067B1] hover:scale-105"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          }
+        }
+      } @else {
+        <p-skeleton
+          shape="circle"
+          size="2rem"
+          styleClass="mr-2 light-gray-skeleton"
+        ></p-skeleton>
+        <p-skeleton
+          shape="circle"
+          size="2rem"
+          styleClass="mr-2 light-gray-skeleton"
+        ></p-skeleton>
+        <p-skeleton
+          shape="circle"
+          size="2rem"
+          styleClass="mr-2 light-gray-skeleton"
+        ></p-skeleton>
+        <p-skeleton
+          shape="circle"
+          size="2rem"
+          styleClass="mr-2 light-gray-skeleton"
+        ></p-skeleton>
+        <p-skeleton
+          shape="circle"
+          size="2rem"
+          styleClass="light-gray-skeleton"
+        ></p-skeleton>
+      }
+    </div>
+
+    <!-- Header section -->
+    <div class="header my-8">
+      <h2 class="mb-6 text-2xl font-bold text-[#0067B1]">
+        {{ "Single-brand.title" | translate }}
+      </h2>
+      <p class="mx-auto text-lg">
+        @if (brandData?.desc) {
+          <ng-container>
+            {{ brandData.desc }}
+          </ng-container>
+        } @else {
+          <ng-template>
+            <p-skeleton
+              width="80%"
+              height="24px"
+              styleClass="mb-2 mx-auto light-gray-skeleton"
+            ></p-skeleton>
+            <p-skeleton
+              width="70%"
+              height="24px"
+              styleClass="mx-auto light-gray-skeleton"
+            ></p-skeleton>
+          </ng-template>
+        }
+      </p>
+    </div>
+
+    <!-- Products grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      @if (brandData?.products?.length) {
+        <ng-container>
+          @for (product of brandData.products; track $index) {
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div
+                class="p-6 flex items-center justify-center md:h-2/3"
+                [ngClass]="getRadialBgClass()"
+              >
+                <a
+                  [routerLink]="['/product', product.slug]"
+                  fragment="top"
+                  (click)="scrollToTop()"
+                >
+                  <img
+                    [src]="product.thumbnail"
+                    [alt]="product.name"
+                    class="object-contain"
+                  />
+                </a>
+              </div>
+              <div class="p-4 flex flex-col justify-between md:h-1/3 mb-3">
+                <span class="font-light">{{ brandData.name }}</span>
+                <a
+                  [routerLink]="['/product', product.slug]"
+                  fragment="top"
+                  (click)="scrollToTop()"
+                >
+                  <h2
+                    class="text-xl font-semibold text-gray-800 hover:underline"
+                  >
+                    {{ product.name }}
+                  </h2>
+                </a>
+                <a
+                  [routerLink]="['/product', product.slug]"
+                  fragment="top"
+                  (click)="scrollToTop()"
+                >
+                  <button
+                    class="mt-3 text-white py-2 block w-full rounded-full bg-[#0067B1] hover:bg-[#00348D]"
+                  >
+                    {{ "Single-brand.learnMore" | translate }}
+                  </button>
+                </a>
+              </div>
+            </div>
+          }
+        </ng-container>
+      } @else {
+        <ng-template>
+          @for (i of [1, 2, 3, 4, 5, 6]; track $index) {
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div
+                class="p-6 flex items-center justify-center"
+                [ngClass]="getRadialBgClass()"
+              >
+                <p-skeleton
+                  width="160px"
+                  height="160px"
+                  styleClass="light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+              <div class="p-4">
+                <p-skeleton
+                  width="40%"
+                  height="20px"
+                  styleClass="mb-2 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  width="70%"
+                  height="28px"
+                  styleClass="mb-5 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  width="120px"
+                  height="40px"
+                  styleClass="rounded-full light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+            </div>
+          }
+        </ng-template>
+      }
+    </div>
+  </section>
+</section>

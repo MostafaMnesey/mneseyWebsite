@@ -1,0 +1,130 @@
+<section class="py-7 page-width mx-auto">
+  <h2 class="text-start text-[#0067B1] text-3xl font-bold my-4">
+    {{ "product.related.title" | translate }}
+    <span>{{ productDetails.product.brand.name }}</span>
+  </h2>
+
+  <section class="">
+    <div class="hidden lg:grid lg:grid-cols-3 gap-6">
+      @if (productDetails.relatedProducts?.length) {
+        <ng-container>
+          @for (product of productDetails.relatedProducts; track $index) {
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full">
+              <!-- Product Image -->
+              <div class="p-6 flex items-center justify-center flex-grow">
+                <a [routerLink]="['/product', product.slug]">
+                  <img
+                    [src]="product.thumbnail"
+                    [alt]="product.name"
+                    class="w-fit object-contain mx-auto"
+                  />
+                </a>
+              </div>
+
+              <!-- Product Details - This section will be at the bottom -->
+              <div class="p-4 text-center mt-auto mb-6">
+                <a [routerLink]="['/product', product.slug]">
+                  <h3 class="font-bold text-black mb-3">
+                    {{ product.name }}
+                  </h3>
+                </a>
+
+                <a [routerLink]="['/product', product.slug]">
+                  <button
+                    class="text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full bg-[#0067B1] hover:bg-[#00348D]"
+                  >
+                    {{ "shop.shopNow" | translate }}
+                  </button>
+                </a>
+              </div>
+            </div>
+          }
+        </ng-container>
+      } @else {
+        <ng-template>
+          @for (i of [1, 2, 3]; track $index) {
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div class="p-6 flex items-center justify-center">
+                <p-skeleton
+                  height="160px"
+                  width="160px"
+                  styleClass="light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+              <div class="p-4">
+                <p-skeleton
+                  height="20px"
+                  width="40%"
+                  styleClass="mb-2 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  height="28px"
+                  width="70%"
+                  styleClass="mb-5 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  height="40px"
+                  width="120px"
+                  styleClass="rounded-full light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+            </div>
+          }
+        </ng-template>
+      }
+    </div>
+
+    <div class="card block lg:hidden py-4">
+      <p-carousel
+        #carouselRef
+        [value]="productDetails.relatedProducts"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+        [style]="{ width: '100%' }"
+        [draggable]="true"
+        [showNavigators]="false"
+        [showIndicators]="false"
+        [circular]="true"
+        [autoplayInterval]="5000"
+      >
+        <ng-template let-product #item>
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden h-full mx-3"
+          >
+            <!-- Product Image -->
+            <div class="p-6 flex items-center justify-center flex-grow h-[70%]">
+              <a [routerLink]="['/product', product.slug]">
+                <img
+                  [src]="product.thumbnail"
+                  [alt]="product.name"
+                  class="w-fit object-contain mx-auto"
+                />
+              </a>
+            </div>
+
+            <!-- Product Details - This section will be at the bottom -->
+            <div
+              class="p-4 text-center mt-auto mb-6 h-[30%] flex flex-col justify-between"
+            >
+              <a [routerLink]="['/product', product.slug]">
+                <h3 class="font-bold text-black mb-3">
+                  {{ product.name }}
+                </h3>
+              </a>
+
+              <a [routerLink]="['/product', product.slug]">
+                <button
+                  class="text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full bg-[#0067B1] hover:bg-[#00348D]"
+                >
+                  {{ "shop.shopNow" | translate }}
+                </button>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,38 @@
+<section class="py-14 page-width mx-auto px-4">
+  <div class="width mx-auto">
+    <div class="flex space-y-3 flex-wrap justify-between items-center">
+      <!-- Left Content -->
+      <div class="md:w-1/2">
+        <h4 class="text-red-500 font-semibold mb-2 flex items-center">
+          <span class="block h-0.5 w-6 bg-red-500 me-2"></span>
+          {{ "home.videosSection.about.sectionTitle" | translate }}
+        </h4>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+          {{ "home.videosSection.about.mainHeading" | translate }} <br />
+          <span class="text-black">
+            {{ "home.videosSection.about.mainHeadingHighlight" | translate }}
+          </span>
+        </h2>
+        <p class="text-gray-600 text-2x1 mb-6">
+          {{ "home.videosSection.about.description" | translate }}
+          <a
+            routerLink="/about"
+            class="bg-[#0067B1] hover:bg-[#00348D] hover:bg-[#00348D] block w-fit my-4 text-white px-6 py-3 rounded-full items-center gap-2 transition"
+          >
+            {{ "home.videosSection.about.discoverMore" | translate }}
+            @if (currentLang() == "en") {
+              <i class="pi pi-arrow-right mx-2"></i>
+            } @else {
+              <i class="pi pi-arrow-left mx-2"></i>
+            }
+          </a>
+        </p>
+      </div>
+      <div
+        class="w-full md:w-1/3 flex justify-center rounded-3xl overflow-hidden bg-amber-200"
+      >
+        <img src="images/home/2 (2).jpg" class="w-full" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

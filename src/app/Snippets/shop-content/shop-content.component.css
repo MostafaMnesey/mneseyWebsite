@@ -1,0 +1,44 @@
+
+.p-tablist-tab-list {
+    border:none !important;
+    padding: 20px 0 !important;
+    gap:7px !important
+  }
+  .p-tab {
+    border-width: 2px;
+    /* color: gray; */
+    padding: 15px;
+    font-weight: var(--p-tabs-tab-font-weight);
+    margin: 10px;
+  }
+  
+  span.p-tablist-active-bar {
+    width: 0;
+    height: 0;
+  }
+  
+  .p-tablist-tab-list {
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: auto;
+  }
+  
+  /* Custom skeleton styling with !important flags */
+  ::ng-deep .p-skeleton {
+    background-color: #f0f0f0 !important;
+  }
+  
+  ::ng-deep .p-skeleton::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%) !important;
+  }
+  
+  /* Additional styles to override any theme-specific styles */
+  ::ng-deep p-skeleton > .p-skeleton {
+    background-color: #f0f0f0 !important;
+  }
+  
+  /* Target the specific element structure */
+  ::ng-deep .p-skeleton-circle,
+  ::ng-deep .p-skeleton-rectangle {
+    background-color: #f0f0f0 !important;
+  }

@@ -1,0 +1,8 @@
+:host ::ng-deep .p-inputtext.p-variant-filled ,
+:host ::ng-deep .p-textarea.p-variant-filled {
+       background: #F7F7F5 !important;
+}
+
+label{
+  color:#0067B1
+}

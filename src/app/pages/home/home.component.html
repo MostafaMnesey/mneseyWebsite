@@ -1,0 +1,59 @@
+<main class="mt-8">
+  <!-- <app-hero></app-hero> -->
+
+  <app-hero-background
+    [isHome]="true"
+    [hlsUrl]="'https://cdn.mentholatumarabia.com/videos/hero/master.m3u8'"
+    [bgImage]="'images/home-hero.jpg'"
+  >
+    <h1 class="text-white text-2xl lg:text-4xl md:text-5xl font-bold uppercase">
+      {{ "home.hero.commitment" | translate }} <br />
+      <span class="block my-4">{{ "home.hero.betterWorld" | translate }}</span>
+    </h1>
+  </app-hero-background>
+  <div class="page-width mx-auto px-4">
+    <app-features-section></app-features-section>
+  </div>
+
+  <section class="my-9" #el>
+    @defer (on viewport; prefetch on idle) {
+      <app-hero-background
+        [hlsUrl]="'https://cdn.mentholatumarabia.com/videos/second/master.m3u8'"
+        [bgImage]="'images/home-df.jpg'"
+      >
+      </app-hero-background>
+    } @placeholder {
+      <div class="h-[400px] bg-gray-200"></div>
+    }
+  </section>
+  <!-- <app-products-slider></app-products-slider> -->
+
+  <!-- <app-suitable-slider></app-suitable-slider> -->
+  <section #blogs>
+    @defer (on viewport(el)) {
+      <div class="page-width mx-auto px-4">
+        <app-blogs-section ngSkipHydration></app-blogs-section>
+      </div>
+    }
+  </section>
+
+  <!-- Background Pattern -->
+  <!-- <div class="img absolute bottom-0 left-0 opacity-20">
+    <img src="images/Vector (7).png" alt="" />
+  </div> -->
+
+  <section #videos>
+    @defer (on viewport(blogs)) {
+      <div class="img hidden lg:block absolute top-0 right-0 opacity-20">
+        <img src="images/Vector (8).png" alt="" />
+      </div>
+      <app-videos-section></app-videos-section>
+    }
+  </section>
+
+  @defer (on viewport(videos)) {
+    <div class="page-width mx-auto px-4">
+      <app-about-section></app-about-section>
+    </div>
+  }
+</main>

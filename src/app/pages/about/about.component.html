@@ -1,0 +1,17 @@
+<app-hero-background
+  [bgImage]="'images/about-banner.jpg'"
+  [isHome]="false"
+>
+  <h1
+    class="w-[45%] mx-auto container text-white text-2xl md:text-3xl lg:text-5xl font-bold text-center leading-normal"
+  >
+    {{ "about.heroTitle" | translate }}
+  </h1>
+</app-hero-background>
+<!-- [title]="'Specialists in family healthcare for over 130 years'" -->
+<main class="w-full mx-auto px-4">
+  <app-who-we-are></app-who-we-are>
+  <app-history></app-history>
+  <app-philosophy></app-philosophy>
+  <app-blogs-section ngSkipHydration></app-blogs-section>
+</main>

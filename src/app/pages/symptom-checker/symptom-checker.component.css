@@ -1,0 +1,16 @@
+a:hover{
+  text-decoration: none !important;
+}
+
+
+:host ::ng-deep .drawer-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+:host ::ng-deep .drawer-scroll::-webkit-scrollbar-thumb {
+  background-color: #3B82F6;
+}
+
+:host ::ng-deep .drawer-scroll::-webkit-scrollbar-track {
+  background: #E5E7EB;
+}

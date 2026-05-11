@@ -1,0 +1,54 @@
+<section class="bg-[#F7F7F5] py-7 mx-auto">
+  <h2
+    class="text-3xl text-center page-width mx-auto font-bold py-5 text-[#0067B1]"
+  >
+    {{ "product.about" | translate }}
+    <!-- <span>{{ productDetails.product.brand.name }}</span> -->
+    {{ productDetails.product.name }}
+  </h2>
+
+  <div class="my-8 page-width mx-auto prose">
+    @for (faq of productDetails.faqs; track $index) {
+      <div class="border border-gray-200 rounded-md mb-2">
+        <h2>
+          <button
+            (click)="toggleAccordion($index)"
+            class="flex items-center justify-between w-full p-4 font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span class="block text-start flex-1">{{ faq.question }}</span>
+            <span class="flex items-center justify-center w-6 h-6">
+              <svg
+                [class.rotate-180]="activeIndex() === $index"
+                class="w-4 h-4 transition-transform"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </span>
+          </button>
+        </h2>
+        @if (activeIndex() === $index) {
+          <div class="p-4 text-gray-600 bg-gray-50">
+            <div
+              [innerHTML]="sanitizeAnswer(faq.answer)"
+              class="prose prose-sm max-w-none leading-relaxed [&_li]:ms-9 [&_p]:mb-2 [&_p]:leading-relaxed [&_strong]:font-bold [&_b]:font-bold [&_em]:italic [&_i]:italic [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul>li]:list-item [&_ol]:list-disc [&_ol]:pl-6 [&_ol]:mb-4 [&_ol>li]:list-item [&_li]:mb-1 [&_li]:leading-relaxed"
+              style="overflow-wrap: anywhere"
+            ></div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (!productDetails.faqs || productDetails.faqs.length === 0) {
+      <div class="text-center p-4 text-gray-500">
+        {{ "product.noFaq" | translate }}
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,234 @@
+<footer class="bg-white border-t-2 border-t-gray-200 pt-4">
+  <div class="container px-4 py-8 page-width mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Logo Column -->
+      <div>
+        <!-- <app-optimized-logo
+          name="Group 3287.png"
+          [width]="300"
+          alt="Mentholatum"
+          cssClass="w-full mb-4"
+          [routerLink]="['/home']"
+        >
+        </app-optimized-logo> -->
+        <img src="/new/muk logo.png" class="mb-4" alt="" />
+        <div class="img my-3">
+          <img src="/new/pic.jpeg" class="w-full aspect-auto" alt="" />
+        </div>
+        <!-- <div class="grid grid-cols-3 items-center gap-4 px-4">
+          <app-optimized-logo
+            name="image001.png.png"
+            [width]="100"
+            alt="Certification"
+            cssClass=""
+          >
+          </app-optimized-logo>
+          <app-optimized-logo
+            name="image003.jpg.png"
+            [width]="100"
+            alt="Certification"
+            cssClass=""
+          >
+          </app-optimized-logo>
+          <app-optimized-logo
+            name="SAMS-Logo-sm.jpeg.png"
+            [width]="100"
+            alt="Certification"
+            cssClass=""
+          >
+          </app-optimized-logo>
+        </div> -->
+      </div>
+
+      <!-- Brands -->
+      <div>
+        <h3 class="text-gray-900 font-semibold mb-4">
+          {{ "footer.brands.title" | translate }}
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              routerLink="/brand/23"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.brands.items.deepHeat" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/brand/24"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.brands.items.deepFreeze" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/brand/25"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.brands.items.deepRelief" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/brand/26"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.brands.items.hadaLabo" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/brand/27"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.brands.items.rohto" | translate }}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mentholatum -->
+      <div>
+        <h3 class="text-gray-900 font-semibold mb-4">
+          {{ "footer.mentholatum.title" | translate }}
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a routerLink="/" class="text-gray-600 hover:text-gray-900">{{
+              "footer.mentholatum.items.discover" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/shop" class="text-gray-600 hover:text-gray-900">{{
+              "footer.brands.items.shop" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/about" class="text-gray-600 hover:text-gray-900">{{
+              "nav.about" | translate
+            }}</a>
+          </li>
+          <li>
+            <a routerLink="/blogs" class="text-gray-600 hover:text-gray-900">{{
+              "nav.blogs" | translate
+            }}</a>
+          </li>
+          <li>
+            <a
+              routerLink="/checker"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.mentholatum.items.symptomChecker" | translate }}</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              routerLink="/brand/5"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.mentholatum.items.rohtoMentholatum" | translate }}</a
+            >
+          </li> -->
+          <li>
+            <a routerLink="/dax" class="text-gray-600 hover:text-gray-900">{{
+              "footer.mentholatum.items.dax" | translate
+            }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Customer Care -->
+      <div>
+        <h3 class="text-gray-900 font-semibold mb-4">
+          {{ "footer.customerCare.title" | translate }}
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a routerLink="/terms" class="text-gray-600 hover:text-gray-900">{{
+              "footer.customerCare.items.terms" | translate
+            }}</a>
+          </li>
+          <li>
+            <a
+              routerLink="/contact"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.customerCare.items.contact" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Privacy"
+              class="text-gray-600 hover:text-gray-900"
+              >{{ "footer.customerCare.items.privacy" | translate }}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Stay Informed -->
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="border-t border-gray-200 mt-8 pt-6">
+      <div
+        class="flex flex-col lg:flex-row justify-between items-center gap-y-3"
+      >
+        <div class="text-center lg:text-start">
+          <p
+            class="text-gray-600 !text-sm !leading-tight text-center lg:text-start mb-3"
+          >
+            {{ "footer.bottom.copyright" | translate }}
+          </p>
+
+          <a
+            href="https://ebba.ae/"
+            class="block !text-sm !leading-tight text-center lg:text-start"
+            target="_blank"
+          >
+            <div
+              class="flex items-center justify-center lg:justify-start gap-2"
+            >
+              <p
+                class="text-gray-600 !text-sm !leading-tight text-center lg:text-start"
+              >
+                {{ "footer.bottom.dev" | translate }}
+              </p>
+              <img
+                src="new/ebba blue.png"
+                class="w-10 opacity-60 hover:opacity-100 transition-all duration-300"
+                alt="ebba"
+              />
+            </div>
+          </a>
+        </div>
+
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/@MentholatumArabia"
+            class="text-blue-600 hover:text-blue-800"
+          >
+            <i style="font-size: 2.25rem !important" class="pi pi-youtube"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.pinterest.com/mentholatumarabia/"
+            class="text-blue-600 hover:text-blue-800"
+          >
+            <i
+              style="font-size: 2.25rem !important"
+              class="pi pi-pinterest"
+            ></i>
+          </a>
+        </div>
+        <!-- <div
+          class="group hover:border-[#00348D] transition flex justify-center items-center icon md:w-12 md:h-12 w-8 h-8 border-2 border-white rounded-full hover:borderred-600"
+        >
+          <a
+            href="https://www.pinterest.com/mentholatumarabia/"
+            class="cursor-pointer flex justify-center items-center"
+          >
+            <i
+              class="pi pi-pinterest text-white group-hover:text-[#00348D] transition text-xl md:text-3xl"
+            ></i
+          ></a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</footer>

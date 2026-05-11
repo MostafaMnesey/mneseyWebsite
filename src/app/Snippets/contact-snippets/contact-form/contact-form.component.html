@@ -1,0 +1,100 @@
+<section class="py-14 bg-white relative">
+  <div class="width w-[80%] mx-auto grid items-center lg:grid-cols-2">
+    <div class="mb-6">
+      <div>
+        <h2 class="text-red-500 font-semibold mb-5 flex items-center">
+          <span class="block h-0.5 w-6 bg-red-500 me-2"></span>
+          {{ "contact.contactForm.sectionTitle" | translate }}
+        </h2>
+        <p class="font-bold capitalize text-xl">
+          {{ "contact.contactForm.subtitle" | translate }}
+        </p>
+      </div>
+
+      <form [formGroup]="contactForm" (ngSubmit)="submit()">
+        <div class="relative my-4">
+          <label for="on_label">{{
+            "contact.contactForm.name" | translate
+          }}</label>
+          <input
+            [dt]="inputDT"
+            class="w-full"
+            type="text"
+            pInputText
+            formControlName="name"
+            autocomplete="off"
+            [fluid]="true"
+          />
+        </div>
+
+        <div class="relative my-4">
+          <label for="on_label">
+            {{ "contact.contactForm.email" | translate }}
+          </label>
+          <input
+            [dt]="inputDT"
+            class="w-full"
+            type="email"
+            pInputText
+            formControlName="email"
+            autocomplete="off"
+            [fluid]="true"
+          />
+        </div>
+
+        <div class="relative my-4">
+          <label for="on_label">
+            {{ "contact.contactForm.type" | translate }}
+          </label>
+          <input
+            [dt]="inputDT"
+            class="w-full"
+            type="text"
+            pInputText
+            formControlName="type"
+            autocomplete="off"
+            [fluid]="true"
+          />
+        </div>
+
+        <div class="relative my-4">
+          <label for="on_label">
+            {{ "contact.contactForm.reason" | translate }}
+          </label>
+          <textarea
+            [dt]="inputDT"
+            rows="5"
+            pTextarea
+            [fluid]="true"
+            formControlName="reason"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="px-6 py-2 bg-[#0067B1] hover:bg-[#00348D] text-white rounded-full font-medium shadow-md cursor-pointer"
+        >
+          {{ "contact.contactForm.submit" | translate }}
+          <i class="pi pi-arrow-right mx-2"></i>
+        </button>
+      </form>
+
+      @defer (when formSubmitted) {
+        @if (formSubmitted) {
+          <div
+            class="alert bg-blue-300 rounded-2xl p-4 flex items-baseline space-x-2 my-4"
+          >
+            <i class="pi pi-check"></i>
+            <p class="capitalize">
+              {{ "contact.contactForm.successMessage" | translate }}
+            </p>
+          </div>
+        }
+      }
+    </div>
+
+    <div class="mb-6 flex justify-center lg:justify-end">
+      <img src="/new/new logo.png" class="w-3/4 aspect-square" alt="" />
+    </div>
+  </div>
+</section>

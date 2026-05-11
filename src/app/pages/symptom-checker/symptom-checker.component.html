@@ -1,0 +1,1276 @@
+<main class="relative mt-10">
+  <div class="relative">
+    <app-body-diagram
+      (bodyPartSelected)="onBodyPartSelected($event)"
+    ></app-body-diagram>
+  </div>
+
+  <p-drawer header="Right Drawer" [(visible)]="visible" position="right">
+    <div
+      class="slideOutContent"
+      [class.active]="selectedAreaId === 'handsAndFingers'"
+    >
+      <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+        <i class="pi pi-times"></i>
+      </div>
+
+      <div
+        class="innerContent ps-container"
+        data-ps-id="2350eb2f-18e0-f500-98e9-e050a158edf0"
+      >
+        <div class="painArea">
+          {{ "symptom.pain_relief.hands_and_fingers.title" | translate }}
+        </div>
+
+        <div class="painAreaInfo">
+          <p>
+            {{
+              "symptom.pain_relief.hands_and_fingers.description" | translate
+            }}
+          </p>
+        </div>
+        <div class="productsRow">
+          <!-- 'oneRow': true -->
+          <div class="product border border-gray-200 rounded-xl p-4">
+            <div class="name brand_2">
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-gel']"
+              >
+                <div class="img w-full lg:w-2/3 mx-auto">
+                  <img
+                    src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418192-(10).png"
+                    class="w-100"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <span class="block text-gray-900 font-normal">{{
+                "footer.brands.items.deepFreeze" | translate
+              }}</span>
+              <a
+                target="_blank"
+                class="text-xl u"
+                [routerLink]="['/product/deep-freeze-cold-gel']"
+              >
+                {{
+                  "symptom.pain_relief.hands_and_fingers.products.deep_freeze_cold_gel.name"
+                    | translate
+                }}
+              </a>
+            </div>
+
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-freeze-cold-gel']"
+              class="text-white"
+            >
+              <p-button
+                styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+              >
+                {{ "Single-brand.learnMore" | translate }}
+              </p-button>
+            </a>
+          </div>
+          <div class="product border border-gray-200 rounded-xl p-4">
+            <div class="name brand_4">
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+              >
+                <div class="img w-full lg:w-2/3 mx-auto">
+                  <img
+                    src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418442-(11).png"
+                    class="w-100"
+                    alt=""
+                  />
+                </div>
+              </a>
+
+              <span class="block text-gray-900 font-normal">{{
+                "footer.brands.items.deepRelief" | translate
+              }}</span>
+
+              <a
+                target="_blank"
+                class="text-xl u"
+                [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+              >
+                {{
+                  "symptom.pain_relief.hands_and_fingers.products.deep_relief_anti_inflammatory_gel.name"
+                    | translate
+                }}
+              </a>
+            </div>
+
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+              class="text-white"
+            >
+              <p-button
+                styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+              >
+                {{ "Single-brand.learnMore" | translate }}
+              </p-button>
+            </a>
+          </div>
+        </div>
+
+        <div class="productsRow" style="display: none">
+          <!-- 'oneRow': true -->
+        </div>
+
+        <div class="clear"></div>
+        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+          <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+        </div>
+        <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+          <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+        </div>
+      </div>
+
+      <div
+        class="slideOutContent"
+        [class.active]="selectedAreaId === 'Lowerlegs'"
+      >
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+
+        <div
+          class="innerContent ps-container"
+          data-ps-id="8985b15d-689f-2f8a-d0c9-ed239fb65947"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.lower_legs.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{ "symptom.pain_relief.lower_legs.description" | translate }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_1">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-spray']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418036-(1).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepHeat" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-spray']"
+                >
+                  {{
+                    "symptom.pain_relief.lower_legs.products.deep_heat_pain_relief_spray.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-pain-relief-spray']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_2">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-spray']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418243-(4).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepFreeze" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-spray']"
+                >
+                  {{
+                    "symptom.pain_relief.lower_legs.products.deep_freeze_cold_spray.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-spray']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="productsRow" style="display: none">
+            <!-- 'oneRow': true -->
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideOutContent" [class.active]="selectedAreaId === 'Ankles'">
+        <div class="closeIcon flex justify-end w-[75%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+
+        <div
+          class="innerContent ps-container"
+          data-ps-id="0e3226bb-cadf-492f-e9fd-9932e1208501"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.ankles.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{ "symptom.pain_relief.ankles.description" | translate }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_2">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-patch']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418144-(4)-(1).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepFreeze" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-patch']"
+                >
+                  {{
+                    "symptom.pain_relief.ankles.products.deep_freeze_cold_patch.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideOutContent" [class.active]="selectedAreaId === 'Hips'">
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+        <div
+          class="innerContent ps-container"
+          data-ps-id="020b71bb-c56b-f833-2727-7b70f44d949b"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.hips.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{ "symptom.pain_relief.hips.description" | translate }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_4">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-relief-actiflex-patch']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418341-(12)-(1).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepRelief" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-relief-actiflex-patch']"
+                >
+                  {{
+                    "symptom.pain_relief.hips.products.deep_relief_actiflex_patch.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-relief-actiflex-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideOutContent" [class.active]="selectedAreaId === 'feet'">
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+        <div
+          class="innerContent ps-container"
+          data-ps-id="5eb34438-3294-1d91-8124-6a15800d3fd2"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.feet.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{ "symptom.pain_relief.hips.description" | translate }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_2">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-gel']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418192-(10).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepFreeze" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-gel']"
+                >
+                  {{
+                    "symptom.pain_relief.feet.products.deep_freeze_cold_gel.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-gel']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slideOutContent" [class.active]="selectedAreaId === 'back'">
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+
+        <div
+          class="innerContent ps-container"
+          data-ps-id="bda9b1c3-0558-869f-a057-675881263215"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.back.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{ "symptom.pain_relief.back.description" | translate }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_1">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-back-patch']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051417595-(2)-(1).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepHeat" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-back-patch']"
+                >
+                  {{
+                    "symptom.pain_relief.back.products.deep_heat_pain_relief_back_patch.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-pain-relief-back-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-warming-belt']"
+              >
+                <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                  <img
+                    src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025062507537-(1).png"
+                    class="w-100"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <span class="block text-gray-900 font-normal">{{
+                "footer.brands.items.deepHeat" | translate
+              }}</span>
+
+              <div class="name brand_1">
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-warming-belt']"
+                >
+                  {{
+                    "symptom.pain_relief.back.products.deep_heat_warming_belt.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-warming-belt']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_4">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418442-(11).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepRelief" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+                >
+                  {{
+                    "symptom.pain_relief.back.products.deep_relief_anti_inflammatory_gel.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_2">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-patch']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418144-(4)-(1).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepFreeze" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-freeze-cold-patch']"
+                >
+                  {{
+                    "symptom.pain_relief.back.products.deep_freeze_cold_patch_back.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="slideOutContent"
+        [class.active]="selectedAreaId === 'neckAndShoulder'"
+      >
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+
+        <div
+          class="innerContent ps-container"
+          data-ps-id="58d8c5ab-627f-a060-af4b-babb55d0126a"
+        >
+          <div class="painArea">
+            {{ "symptom.pain_relief.neck_and_shoulders.title" | translate }}
+          </div>
+
+          <div class="painAreaInfo">
+            <p>
+              {{
+                "symptom.pain_relief.neck_and_shoulders.description" | translate
+              }}
+            </p>
+          </div>
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_1">
+                <a
+                  target="_blank"
+                  [routerLink]="[
+                    '/product/deep-heat-muscle-massage-roll-on-lotion',
+                  ]"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051417303-(3).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepHeat" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="[
+                    '/product/deep-heat-muscle-massage-roll-on-lotion',
+                  ]"
+                >
+                  {{
+                    "symptom.pain_relief.neck_and_shoulders.products.deep_heat_muscle_massage_roll_on.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="[
+                  '/product/deep-heat-muscle-massage-roll-on-lotion',
+                ]"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+            <div class="product border border-gray-200 rounded-xl p-4">
+              <div class="name brand_1">
+                <a
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-heat-patch']"
+                >
+                  <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                    <img
+                      src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025061810204-(7).png"
+                      class="w-100"
+                      alt=""
+                    />
+                  </div>
+                </a>
+                <span class="block text-gray-900 font-normal">{{
+                  "footer.brands.items.deepHeat" | translate
+                }}</span>
+
+                <a
+                  class="text-xl u"
+                  target="_blank"
+                  [routerLink]="['/product/deep-heat-pain-relief-heat-patch']"
+                >
+                  {{
+                    "symptom.pain_relief.neck_and_shoulders.products.deep_heat_pain_relief_heat_patch.name"
+                      | translate
+                  }}
+                </a>
+              </div>
+
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-pain-relief-heat-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+
+          <div class="productsRow">
+            <!-- 'oneRow': true -->
+          </div>
+
+          <div class="clear"></div>
+          <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+            <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+          </div>
+          <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+            <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="slideOutContent"
+        [class.active]="selectedAreaId === 'Muscles'"
+      >
+        <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+          <i class="pi pi-times"></i>
+        </div>
+        <div class="painArea">
+          {{ "symptom.pain_relief.muscles.title" | translate }}
+        </div>
+
+        <div class="painAreaInfo">
+          <p>
+            {{ "symptom.pain_relief.muscles.description" | translate }}
+          </p>
+        </div>
+        <div class="productsRow">
+          <!-- 'oneRow': true -->
+          <div class="product border border-gray-200 rounded-xl p-4">
+            <div class="name brand_2">
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-gel']"
+              >
+                <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                  <img
+                    src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418192-(10).png"
+                    class="w-100"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <span class="block text-gray-900 font-normal">{{
+                "footer.brands.items.deepFreeze" | translate
+              }}</span>
+
+              <a
+                class="text-xl u"
+                target="_blank"
+                [routerLink]="['/product/deep-freeze-cold-gel']"
+              >
+                {{
+                  "symptom.pain_relief.muscles.products.deep_freeze_cold_gel.name"
+                    | translate
+                }}
+              </a>
+              <a
+                target="_blank"
+                [routerLink]="['/product/deep-heat-pain-relief-heat-patch']"
+                class="text-white"
+              >
+                <p-button
+                  styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+                >
+                  {{ "Single-brand.learnMore" | translate }}
+                </p-button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_1">
+            <a target="_blank" [routerLink]="['/product/deep-heat-rub']">
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051417121-(10).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepHeat" | translate
+            }}</span>
+
+            <a
+              class="text-xl u"
+              target="_blank"
+              [routerLink]="['/product/deep-heat-rub']"
+            >
+              {{
+                "symptom.pain_relief.muscles.products.deep_heat_heat_rub.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-heat-rub']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+      </div>
+
+      <div class="productsRow">
+        <!-- 'oneRow': true -->
+      </div>
+
+      <div class="clear"></div>
+      <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+        <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+      </div>
+      <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+        <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+      </div>
+    </div>
+
+    <div class="slideOutContent" [class.active]="selectedAreaId === 'thighs'">
+      <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+        <i class="pi pi-times"></i>
+      </div>
+      <div class="painArea">
+        {{ "symptom.pain_relief.thighs.title" | translate }}
+      </div>
+
+      <div class="painAreaInfo">
+        <p>
+          {{ "symptom.pain_relief.thighs.description" | translate }}
+        </p>
+      </div>
+      <div class="productsRow">
+        <!-- 'oneRow': true -->
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_1">
+            <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+              <img
+                src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051417121-(10).png"
+                class="w-100"
+                alt=""
+              />
+            </div>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepHeat" | translate
+            }}</span>
+
+            <a
+              target="_blank"
+              class="text-xl u"
+              [routerLink]="['/product/deep-heat-rub']"
+            >
+              {{
+                "symptom.pain_relief.thighs.products.deep_heat_heat_rub.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-heat-rub']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_1">
+            <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+              <img
+                src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418036-(1).png"
+                class="w-100"
+                alt=""
+              />
+            </div>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepHeat" | translate
+            }}</span>
+
+            <a
+              class="text-xl u"
+              target="_blank"
+              [routerLink]="['/product/deep-heat-pain-relief-spray']"
+            >
+              {{
+                "symptom.pain_relief.thighs.products.deep_heat_pain_relief_spray.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-heat-pain-relief-spray']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+      </div>
+
+      <div class="productsRow">
+        <!-- 'oneRow': true -->
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_2">
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-freeze-cold-spray']"
+            >
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418243-(4).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepFreeze" | translate
+            }}</span>
+
+            <a
+              class="text-xl u"
+              target="_blank"
+              [routerLink]="['/product/deep-freeze-cold-spray']"
+            >
+              {{
+                "symptom.pain_relief.thighs.products.deep_freeze_cold_spray.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-freeze-cold-spray']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_2">
+            <a target="_blank" [routerLink]="['/product/deep-freeze-cold-gel']">
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418192-(10).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepFreeze" | translate
+            }}</span>
+
+            <a
+              class="text-xl u"
+              target="_blank"
+              [routerLink]="['/product/deep-freeze-cold-gel']"
+            >
+              {{
+                "symptom.pain_relief.thighs.products.deep_freeze_cold_gel.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-freeze-cold-gel']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+      <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+        <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+      </div>
+      <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+        <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+      </div>
+    </div>
+
+    <div class="slideOutContent" [class.active]="selectedAreaId === 'joints'">
+      <div class="closeIcon flex justify-end w-[85%]" (click)="closeDrawer()">
+        <i class="pi pi-times"></i>
+      </div>
+      <div class="painArea">
+        {{ "symptom.pain_relief.joints.title" | translate }}
+      </div>
+
+      <div class="painAreaInfo">
+        <p>
+          {{ "symptom.pain_relief.joints.description" | translate }}
+        </p>
+      </div>
+      <div class="productsRow">
+        <!-- 'oneRow': true -->
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_2">
+            <a target="_blank" [routerLink]="['/product/deep-freeze-cold-gel']">
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418192-(10).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepFreeze" | translate
+            }}</span>
+
+            <a
+              target="_blank"
+              class="text-xl u"
+              [routerLink]="['/product/deep-freeze-cold-gel']"
+            >
+              {{
+                "symptom.pain_relief.joints.products.deep_freeze_cold_gel.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-freeze-cold-gel']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_4">
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+            >
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418442-(11).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepRelief" | translate
+            }}</span>
+
+            <a
+              target="_blank"
+              class="text-xl"
+              [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+            >
+              {{
+                "symptom.pain_relief.joints.products.deep_relief_joint_pain_gel.name"
+                  | translate
+              }}
+            </a>
+          </div>
+
+          <a
+            target="_blank"
+            [routerLink]="['/product/deep-relief-anti-inflammatory-gel']"
+            class="text-white"
+          >
+            <p-button
+              styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+            >
+              {{ "Single-brand.learnMore" | translate }}
+            </p-button>
+          </a>
+        </div>
+      </div>
+
+      <div class="productsRow">
+        <!-- 'oneRow': true -->
+        <div class="product border border-gray-200 rounded-xl p-4">
+          <div class="name brand_4">
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-relief-actiflex-patch']"
+            >
+              <div class="img w-full lg:w-2/3 mx-auto mx-auto">
+                <img
+                  src="https:\/\/www.uat.alpha-360.net\/public\/uploads\/products\/2025051418341-(12)-(1).png"
+                  class="w-100"
+                  alt=""
+                />
+              </div>
+            </a>
+            <span class="block text-gray-900 font-normal">{{
+              "footer.brands.items.deepRelief" | translate
+            }}</span>
+
+            <a
+              class="text-xl u"
+              target="_blank"
+              [routerLink]="['/product/deep-relief-actiflex-patch']"
+            >
+              {{
+                "symptom.pain_relief.joints.products.deep_relief_actiflex_patch.name"
+                  | translate
+              }}
+            </a>
+
+            <a
+              target="_blank"
+              [routerLink]="['/product/deep-relief-actiflex-patch']"
+              class="text-white"
+            >
+              <p-button
+                styleClass="block w-full bg-[#0067B1] hover:bg-[#00348D]  text-white  py-2 !rounded-full items-center  hover:bg-[#00348D] hover:text-white transition-all duration-300"
+              >
+                {{ "Single-brand.learnMore" | translate }}
+              </p-button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+      <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px">
+        <div class="ps-scrollbar-x" style="left: 0px; width: 0px"></div>
+      </div>
+      <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px">
+        <div class="ps-scrollbar-y" style="top: 0px; height: 0px"></div>
+      </div>
+    </div>
+  </p-drawer>
+
+  <div
+    class="absolute right-0 bottom-0 w-[30%] h-[80vh] bg-no-repeat bg-cover -z-10"
+    style="background-image: url(images/bg-blue.png)"
+  ></div>
+</main>

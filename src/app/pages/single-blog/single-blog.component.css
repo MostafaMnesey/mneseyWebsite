@@ -1,0 +1,52 @@
+
+/* Add these styles to your component CSS */
+:host ::ng-deep h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+:host ::ng-deep h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+:host ::ng-deep p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+:host ::ng-deep ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+:host ::ng-deep ol li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+:host ::ng-deep strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* :host ::ng-deep .prose {
+  max-width: 65ch;
+  margin: 0 auto;
+} */
+
+/* Ensure images in content are responsive */
+:host ::ng-deep img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  margin: 1.5rem 0;
+}

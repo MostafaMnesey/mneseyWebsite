@@ -1,0 +1,129 @@
+<section class="py-14">
+  <div class="page-width mx-auto">
+    <!-- Section Header -->
+    <div class="mx-auto md:flex items-center justify-between mb-6">
+      <div>
+        <h2 class="text-red-500 font-semibold mb-2 flex items-center">
+          <span class="block h-0.5 w-6 bg-red-500 me-2"></span>
+          {{ "blogsSection.header.label" | translate }}
+        </h2>
+        <p
+          class="text-xl md:text-2xl lg:text-3xl font-bold relative inline-block"
+        >
+          {{ "blogsSection.header.title" | translate }}
+        </p>
+      </div>
+      <a routerLink="/blogs">
+        <button
+          class="hidden lg:block px-6 py-2 bg-[#0067B1] hover:bg-[#00348D] text-white rounded-full font-medium shadow-md my-5 lg:my-0"
+        >
+          {{ "blogsSection.header.viewAll" | translate }}
+          @if (currentLang() == "en") {
+            <i class="pi pi-arrow-right mx-2"></i>
+          } @else {
+            <i class="pi pi-arrow-left mx-2"></i>
+          }
+        </button>
+      </a>
+    </div>
+
+    <div class="page-width mx-auto hidden lg:grid lg:grid-cols-3 gap-6">
+      @for (blog of blogs(); track $index) {
+        <a [routerLink]="['/blogs', blog.slug]">
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
+          >
+            <div class="">
+              <!-- Aspect ratio set to 4:3 -->
+              <img
+                [src]="blog.thumbnail"
+                alt="Blog Image"
+                class="w-full object-cover aspect-square"
+              />
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <h3 class="text-lg font-semibold mt-4">{{ blog.title }}</h3>
+              <p class="text-gray-600 text-sm flex-grow line-clamp-3">
+                {{ blog.excerpt }}
+              </p>
+              <a
+                class="text-blue-500 font-medium mt-2 inline-block"
+                [routerLink]="['/blogs', blog.slug]"
+              >
+                {{ "blogsSection.blogCard.readMore" | translate }}
+                @if (currentLang() == "en") {
+                  <i class="pi pi-arrow-right mx-2"></i>
+                } @else {
+                  <i class="pi pi-arrow-left mx-2"></i>
+                }
+              </a>
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+
+    <div class="card block lg:hidden">
+      <p-carousel
+        #carouselRef
+        [value]="blogs()"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+        [style]="{ width: '100%' }"
+        [draggable]="true"
+        [showNavigators]="false"
+        [showIndicators]="false"
+        [circular]="true"
+        [autoplayInterval]="5000"
+      >
+        <ng-template let-blog #item>
+          <a [routerLink]="['/blogs', blog.slug]">
+            <div
+              class="bg-white rounded-xl shadow-lg m-2 overflow-hidden flex flex-col h-full"
+            >
+              <div>
+                <img
+                  [src]="blog.thumbnail"
+                  alt="Blog Image"
+                  class="w-full object-cover aspect-auto"
+                />
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <h3 class="text-lg font-semibold mt-4">{{ blog.title }}</h3>
+                <p class="text-gray-600 text-sm flex-grow line-clamp-3">
+                  {{ blog.excerpt }}
+                </p>
+                <a
+                  class="text-blue-500 font-medium mt-2 inline-block"
+                  [routerLink]="['/blogs', blog.slug]"
+                >
+                  {{ "blogsSection.blogCard.readMore" | translate }}
+                  @if (currentLang() == "en") {
+                    <i class="pi pi-arrow-right mx-2"></i>
+                  } @else {
+                    <i class="pi pi-arrow-left mx-2"></i>
+                  }
+                </a>
+              </div>
+            </div>
+          </a>
+        </ng-template>
+      </p-carousel>
+    </div>
+
+    <a routerLink="/blogs">
+      <button
+        class="block mx-auto lg:hidden px-8 py-3 bg-[#0067B1] hover:bg-[#00348D] text-white rounded-full font-medium shadow-md my-5 lg:my-0"
+      >
+        {{ "blogsSection.header.viewAll" | translate }}
+        @if (currentLang() == "en") {
+          <i class="pi pi-arrow-right mx-2"></i>
+        } @else {
+          <i class="pi pi-arrow-left mx-2"></i>
+        }
+      </button>
+    </a>
+  </div>
+</section>

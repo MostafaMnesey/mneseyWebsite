@@ -1,0 +1,126 @@
+<section class="py-14 bg-white relative page-width mx-auto">
+  <div
+    class="lg:grid items-center justify-between lg:grid-cols-2 page-width mx-auto gap-y-6"
+  >
+    <div
+      class="relative mx-auto w-3/4 border-2 border-gray-200 rounded-xl p-2 mb-4"
+    >
+      <img
+        [src]="productDetails.product.images[0]"
+        alt="Product Image"
+        class="w-full lg:w-2/3 block mx-auto rounded-xl"
+      />
+    </div>
+
+    <!-- Product Info -->
+    <div class="mb-6">
+      <h2 class="text-[#0067B1] text-4xl font-bold mb-4">
+        {{ productDetails.product.name }}
+      </h2>
+      <p class="text-gray-700 mb-3">{{ productDetails.product.details }}</p>
+      <p class="font-bold mb-3">
+        {{ "product.brand" | translate }}:
+        <span [class]="getTitleColorClass()">{{
+          productDetails.product.brand.name
+        }}</span>
+      </p>
+
+      <div class="buttons flex space-x-4">
+        @if (shouldShowShopButton(product)) {
+          <button
+            (click)="where()"
+            [class]="
+              'mt-3 bg-[#0067B1] hover:bg-[#00348D]  text-white py-2 px-6 rounded-full text-sm font-semibold'
+            "
+          >
+            {{ "product.shopNow" | translate }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Availability Dialog -->
+<p-dialog
+  [(visible)]="showCountriesDialog"
+  class="w-[80%] lg:w-[50%]"
+  [header]="'product.availableIn' | translate"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-4">{{ selectedProductName }}</h3>
+    @if (available == true) {
+      <p class="mb-4">{{ "product.availability.message" | translate }}</p>
+
+      <div class="grid grid-cols-1 gap-4">
+        @if (selectedProductCountries.length) {
+          <ng-container>
+            @for (country of selectedProductCountries; track $index) {
+              @if (
+                country.pivot?.where_to_buy_link ||
+                country.pivot?.available_in_pharmacies == 1
+              ) {
+                <div
+                  class="p-3 border rounded-lg hover:bg-gray-50"
+                  [ngClass]="{
+                    'cursor-pointer': country.pivot?.where_to_buy_link,
+                  }"
+                  (click)="
+                    country.pivot?.where_to_buy_link &&
+                      openCountryLink(country.pivot?.where_to_buy_link)
+                  "
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="font-medium">{{ country.name_en }}</span>
+                      @if (country.name_ar) {
+                        <p class="text-sm text-gray-500">
+                          {{ country.name_ar }}
+                        </p>
+                      }
+                    </div>
+                    <div>
+                      @if (country.pivot?.where_to_buy_link) {
+                        <button
+                          class="px-3 py-1 bg-blue-500 text-white rounded-md text-sm"
+                        >
+                          {{ "product.buyNow" | translate }}
+                        </button>
+                      }
+                      @if (
+                        !country.pivot?.where_to_buy_link &&
+                        country.pivot?.available_in_pharmacies === 1
+                      ) {
+                        <span
+                          class="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm"
+                        >
+                          {{ "product.availableInPharmacies" | translate }}
+                        </span>
+                      }
+                    </div>
+                  </div>
+                </div>
+              }
+            }
+          </ng-container>
+        } @else {
+          <ng-template>
+            @for (i of [1, 2, 3, 4]; track $index) {
+              <div>
+                <p-skeleton
+                  height="60px"
+                  styleClass="mb-2 light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+            }
+          </ng-template>
+        }
+      </div>
+    } @else {
+      <p>{{ "product.notAvailable" | translate }}</p>
+    }
+  </div>
+</p-dialog>

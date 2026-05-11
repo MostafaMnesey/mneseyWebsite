@@ -1,0 +1,19 @@
+<!-- <app-pages-hero
+  [bg]="'images/about/brands.jpg'"
+  [title]="'brands.heroTitle'"
+></app-pages-hero> -->
+
+<section class="mt-8">
+  <app-hero-background
+    [hlsUrl]="'https://cdn.mentholatumarabia.com/videos/main/master.m3u8'"
+    [bgImage]="'images/brands-hero.jpg'"
+    [isHome]="false"
+  >
+    <h1 class="text-white text-2xl lg:text-4xl md:text-5xl font-bold uppercase">
+      {{ "brands.heroTitle" | translate }}
+    </h1>
+  </app-hero-background>
+</section>
+<main class="w-full page-width mx-auto px-4">
+  <app-brands-content></app-brands-content>
+</main>

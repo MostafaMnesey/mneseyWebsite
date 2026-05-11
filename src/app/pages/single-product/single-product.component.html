@@ -1,0 +1,148 @@
+<main class="w-full mx-auto mt-10">
+  @if (!productDetails?.product) {
+    <ng-container>
+      <section class="py-14 bg-white relative page-width mx-auto">
+        <div class="width w-[80%] mx-auto grid items-center lg:grid-cols-2">
+          <div class="mb-6 flex">
+            <div
+              class="w-[25%] flex flex-col overflow-x-hidden gap-2 lg:gap-4 mt-4 p-2 justify-center"
+            >
+              <p-skeleton
+                height="100px"
+                width="100px"
+                styleClass="mb-2 light-gray-skeleton"
+              ></p-skeleton>
+              <p-skeleton
+                height="100px"
+                width="100px"
+                styleClass="mb-2 light-gray-skeleton"
+              ></p-skeleton>
+              <p-skeleton
+                height="100px"
+                width="100px"
+                styleClass="light-gray-skeleton"
+              ></p-skeleton>
+            </div>
+            <div class="relative w-[75%] flex justify-center">
+              <p-skeleton
+                height="300px"
+                width="300px"
+                styleClass="rounded-xl light-gray-skeleton"
+              ></p-skeleton>
+            </div>
+          </div>
+          <div class="mb-6">
+            <p-skeleton
+              height="48px"
+              width="80%"
+              styleClass="mb-4 light-gray-skeleton"
+            ></p-skeleton>
+            <p-skeleton
+              height="20px"
+              width="100%"
+              styleClass="mb-2 light-gray-skeleton"
+            ></p-skeleton>
+            <p-skeleton
+              height="20px"
+              width="95%"
+              styleClass="mb-2 light-gray-skeleton"
+            ></p-skeleton>
+            <p-skeleton
+              height="20px"
+              width="90%"
+              styleClass="mb-3 light-gray-skeleton"
+            ></p-skeleton>
+            <p-skeleton
+              height="20px"
+              width="40%"
+              styleClass="mb-4 light-gray-skeleton"
+            ></p-skeleton>
+            <div class="flex space-x-4">
+              <p-skeleton
+                height="40px"
+                width="120px"
+                styleClass="rounded-full light-gray-skeleton"
+              ></p-skeleton>
+              <p-skeleton
+                height="40px"
+                width="120px"
+                styleClass="rounded-full light-gray-skeleton"
+              ></p-skeleton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#F9F9F9] py-7">
+        <p-skeleton
+          height="36px"
+          width="60%"
+          styleClass="mb-8 mx-auto light-gray-skeleton"
+        ></p-skeleton>
+        <div class="mx-auto w-[80%] my-8">
+          <p-skeleton
+            height="60px"
+            styleClass="mb-2 light-gray-skeleton"
+          ></p-skeleton>
+          <p-skeleton
+            height="60px"
+            styleClass="mb-2 light-gray-skeleton"
+          ></p-skeleton>
+          <p-skeleton
+            height="60px"
+            styleClass="mb-2 light-gray-skeleton"
+          ></p-skeleton>
+        </div>
+      </section>
+
+      <section class="py-7">
+        <p-skeleton
+          height="36px"
+          width="50%"
+          styleClass="mb-8 mx-auto light-gray-skeleton"
+        ></p-skeleton>
+        <div
+          class="page-width mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6"
+        >
+          @for (i of [1, 2, 3]; track $index) {
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <div class="p-6 flex items-center justify-center">
+                <p-skeleton
+                  height="160px"
+                  width="160px"
+                  styleClass="light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+              <div class="p-4">
+                <p-skeleton
+                  height="20px"
+                  width="40%"
+                  styleClass="mb-2 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  height="28px"
+                  width="70%"
+                  styleClass="mb-5 light-gray-skeleton"
+                ></p-skeleton>
+                <p-skeleton
+                  height="40px"
+                  width="120px"
+                  styleClass="rounded-full light-gray-skeleton"
+                ></p-skeleton>
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+    </ng-container>
+  } @else {
+    <app-product-details
+      [productDetails]="productDetails"
+    ></app-product-details>
+    <app-faq [productDetails]="productDetails"></app-faq>
+    <app-symptom-snippet></app-symptom-snippet>
+    <app-related-products
+      [productDetails]="productDetails"
+    ></app-related-products>
+  }
+</main>

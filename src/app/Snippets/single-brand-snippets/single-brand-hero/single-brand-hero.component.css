@@ -1,0 +1,31 @@
+
+.radial-blue{
+    background-image: radial-gradient(#2E89F6, #184A9A);
+  }
+  
+  .radial-red{
+    background-image: radial-gradient(#E1423C, #B22C24);
+  }
+  
+  .radial-pink{
+    background-image: radial-gradient(#FA77AB, #E7317A);
+  }
+  
+  .radial-green{
+    background-image: radial-gradient(#178F34, #3D1A54);
+  }
+  
+  .radial-purple{
+    background-image: radial-gradient(#493569, #30214E);
+  }
+  
+  /* Add this to your component's CSS file */
+  ::ng-deep .light-gray-skeleton.p-skeleton {
+    background-color: #f0f0f0 !important; /* Light gray color */
+  }
+  
+  ::ng-deep .light-gray-skeleton.p-skeleton::after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%) !important;
+  }
+  
+  

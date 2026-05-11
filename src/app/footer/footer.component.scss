@@ -1,0 +1,27 @@
+:host ::ng-deep {
+  .p-inputtext {
+    &::placeholder {
+      color: #6c757d;
+      
+    }
+    &:enabled:focus {
+      box-shadow: none;
+      border-color: #ced4da;
+    }
+  }
+  
+  .p-checkbox {
+    .p-checkbox-box {
+      border-radius: 2px;
+      border-color: #2563eb;
+      &.p-highlight {
+        background: #2563eb;
+        border-color: #2563eb;
+      }
+    }
+  }
+  [type=text]{
+    border: none;
+    border-bottom:#4172EC 2px solid;
+  }
+}

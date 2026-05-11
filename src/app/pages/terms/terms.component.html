@@ -1,0 +1,32 @@
+<main class="w-full">
+  <app-hero-background
+    [bgImage]="'new/8c7143aa7df9b388214a669834ec8bf0d5940e74.png'"
+    [isHome]="false"
+  >
+    <h1
+      class="w-[45%] mx-auto container text-white text-2xl md:text-3xl lg:text-5xl font-bold text-center leading-normal"
+    >
+      {{ "terms_conditions.title" | translate }}
+    </h1>
+  </app-hero-background>
+
+  <div class="content page-width mx-auto px-4 py-20">
+    <div class="grid md:grid-cols-2 gap-y-6">
+      <div class="content">
+        <h1 class="mb-2 font-semibold text-2xl">
+          {{ "terms_conditions.title" | translate }}
+        </h1>
+        <h2 class="mb-4 text-lg">
+          {{ "terms_conditions.subtitle" | translate }}
+        </h2>
+        <p>
+          {{ "terms_conditions.description" | translate }}
+        </p>
+      </div>
+
+      <div class="img flex justify-end -order-1 md:order-none">
+        <img class="w-full md:w-3/4" src="/new/new logo.png" alt="" />
+      </div>
+    </div>
+  </div>
+</main>

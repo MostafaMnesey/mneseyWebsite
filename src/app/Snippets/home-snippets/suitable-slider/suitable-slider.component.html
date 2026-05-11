@@ -1,0 +1,309 @@
+<section
+  style="direction: ltr"
+  class="second-slider overflow-hidden relative bg-gray-200 h-auto w-full mx-auto"
+>
+  <!-- lg:max-h-[600px] -->
+  <div
+    class="flex transition-transform duration-500 ease-in-out"
+    [ngStyle]="{ transform: 'translateX(' + -currentIndex2 * 100 + '%)' }"
+  >
+    <!-- Slide 1 -->
+    <div class="min-w-full h-full flex flex-col justify-center items-center">
+      <div class="slide-1 relative w-full px-6 py-5 lg:py-10">
+        <div class="width w-[80%] mx-auto">
+          <div
+            class="grid lg:grid-cols-2 gap-y-3 gap-x-3"
+            [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+          >
+            <div
+              class="w-[90%] lg:w-[80%] ms-auto content flex flex-col justify-between"
+            >
+              <div class="mb-4">
+                <h2 class="text-5xl font-bold mb-6">
+                  {{ "home.suitableSlider.slide1.title" | translate }}
+                  <span class="text-red-600">
+                    {{
+                      "home.suitableSlider.slide1.titleHighlight" | translate
+                    }}
+                  </span>
+                  <br />
+                  {{ "home.suitableSlider.slide1.title-p2" | translate }}
+                </h2>
+                <p class="text-lg mb-6 lg:mb-10">
+                  {{ "home.suitableSlider.slide1.description" | translate }}
+                </p>
+                <button
+                  routerLink="/shop"
+                  class="px-6 py-2 bg-blue-500 text-white rounded-full font-medium shadow-md hover:bg-[#00348D]"
+                >
+                  {{ "home.suitableSlider.slide1.button" | translate }}
+
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </button>
+              </div>
+
+              <div class="hidden lg:flex ms-10 space-x-4 mb-4">
+                <button
+                  (click)="prevSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-left'
+                        : 'pi-arrow-right'
+                    "
+                    class="pi mx-2"
+                  ></i>
+                </button>
+                <button
+                  (click)="nextSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-center lg:justify-end">
+              <img
+                src="images/home/5 (1).jpg"
+                class="aspect-square rounded shadow lg:h-[400px]"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="measure absolute start-0 top-10">
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="flex items-baseline space-x-2">
+            <div class="mb-6 bg-blue-500 h-1.5 rounded-e-md w-10 lg:w-12"></div>
+            <div>01</div>
+          </div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="min-w-full h-full flex flex-col justify-center items-center">
+      <div class="slide-1 relative w-full px-6 py-5 lg:py-10">
+        <div class="width w-[80%] mx-auto">
+          <div
+            class="grid lg:grid-cols-2 gap-y-3 gap-x-3"
+            [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+          >
+            <div
+              class="w-[90%] lg:w-[80%] ms-auto flex flex-col justify-between content relative"
+            >
+              <div class="mb-4">
+                <h2 class="text-5xl font-bold text-black mb-6">
+                  {{ "home.suitableSlider.slide2.title" | translate }}
+                   <span class="text-red-500">
+                    {{
+                      "home.suitableSlider.slide2.titleHighlight" | translate
+                    }}
+                  </span>
+                </h2>
+                <p class="text-lg mb-6 lg:mb-10">
+                  {{ "home.suitableSlider.slide2.description" | translate }}
+                </p>
+                <button
+                  routerLink="/shop"
+                  class="px-6 py-2 bg-blue-500 text-white rounded-full font-medium shadow-md hover:bg-[#00348D]"
+                >
+                  {{ "home.suitableSlider.slide2.button" | translate }}
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </button>
+              </div>
+
+              <div class="hidden lg:flex ms-10 space-x-4 mb-4">
+                <button
+                  (click)="prevSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-left'
+                        : 'pi-arrow-right'
+                    "
+                    class="pi mx-2"
+                  ></i>
+                </button>
+                <button
+                  (click)="nextSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex justify-center lg:justify-end">
+              <img
+                src="images/home/5 (2).jpg"
+                class="rounded shadow lg:h-[400px]"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="measure absolute start-0 top-10">
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="flex items-baseline space-x-2">
+            <div class="mb-6 bg-blue-500 h-1.5 rounded-e-md w-10 lg:w-12"></div>
+            <div>02</div>
+          </div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="min-w-full h-full flex flex-col justify-center items-center">
+      <div class="slide-1 relative w-full px-6 py-5 lg:py-10">
+        <div class="width w-[80%] mx-auto">
+          <div
+            class="grid lg:grid-cols-2 gap-y-3 gap-x-3"
+            [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+          >
+            <div
+              class="w-[90%] lg:w-[80%] flex flex-col justify-between relative ms-auto content"
+            >
+              <div class="mb-4">
+                <h2 class="text-5xl font-bold mb-6">
+                  {{ "home.suitableSlider.slide3.title" | translate }}
+                  <span class="text-red-500">
+                    {{
+                      "home.suitableSlider.slide3.titleHighlight" | translate
+                    }}</span
+                  >
+                </h2>
+                <p class="text-lg mb-6 lg:mb-10">
+                  {{ "home.suitableSlider.slide3.description" | translate }}
+                </p>
+                <a
+                  href="https://eye-blink-checker.vercel.app/"
+                  class="px-6 py-2 bg-blue-500 text-white rounded-full font-medium shadow-md hover:bg-[#00348D]"
+                >
+                  {{ "home.suitableSlider.slide3.button" | translate }}
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </a>
+              </div>
+
+              <div class="hidden lg:flex ms-10 space-x-4 mb-4">
+                <button
+                  (click)="prevSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-left'
+                        : 'pi-arrow-right'
+                    "
+                    class="pi mx-2"
+                  ></i>
+                </button>
+                <button
+                  (click)="nextSlide2()"
+                  class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+                >
+                  <i
+                    class="pi mx-2"
+                    [class]="
+                      currentLang() === 'en'
+                        ? 'pi-arrow-right'
+                        : 'pi-arrow-left'
+                    "
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <div class="flex justify-center lg:justify-end">
+              <img
+                src="images/home/6 (1).jpg"
+                class="aspect-square rounded shadow lg:h-[400px]"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="measure absolute start-0 top-10">
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="flex items-baseline space-x-2">
+            <div class="mb-6 bg-blue-500 h-1.5 rounded-e-md w-10 lg:w-12"></div>
+            <div>03</div>
+          </div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+          <div class="mb-6 bg-black h-1.5 rounded-e-md w-7 lg:w-9"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="flex lg:hidden justify-center space-x-4 mb-4">
+    <button
+      (click)="prevSlide2()"
+      class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+    >
+      <i
+        [class]="currentLang() === 'en' ? 'pi-arrow-left' : 'pi-arrow-right'"
+        class="pi mx-2"
+      ></i>
+    </button>
+    <button
+      (click)="nextSlide2()"
+      class="p-2 bg-blue-700 text-white rounded-md shadow-md"
+    >
+      <i
+        class="pi mx-2"
+        [class]="currentLang() === 'en' ? 'pi-arrow-right' : 'pi-arrow-left'"
+      ></i>
+    </button>
+  </div>
+</section>

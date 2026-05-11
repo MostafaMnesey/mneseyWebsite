@@ -1,0 +1,76 @@
+@if (blogData) {
+  <main class="w-full mx-auto page-width">
+    <!-- Header Section -->
+    <section class="w-full page-width mx-auto pt-8 px-4">
+      <div class="mb-2 text-sm text-gray-500">
+        <a routerLink="/" class="text-[#0067B1] hover:underline">{{
+          "blog.breadcrumb.home" | translate
+        }}</a>
+        /
+        <a [routerLink]="['/blogs']" class="text-[#0067B1] hover:underline">{{
+          "blog.breadcrumb.blogs" | translate
+        }}</a>
+        /
+        <span>{{ blogData.title }}</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold my-5">{{ blogData.title }}</h1>
+
+      <p class="mb-6">
+        {{ blogData.excerpt }}
+      </p>
+
+      <!-- Featured Image -->
+      <div class="mb-8 flex justify-center">
+        <img
+          [src]="blogData.image"
+          alt="{{ blogData.title }}"
+          class="w-full md:w-1/2 h-auto rounded-3xl shadow-lg"
+        />
+      </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="w-full page-width mx-auto px-4 pb-12">
+      <div
+        class="w-full prose-headings:text-gray-800 prose-p:text-gray-600 prose-strong:font-bold"
+      >
+        <div [innerHTML]="formatContent(blogData.content)"></div>
+      </div>
+
+      <!-- Tags Section -->
+      <div class="mt-10 pt-6 border-t border-gray-200">
+        <!-- Optional tag display -->
+      </div>
+
+      <!-- Share Section
+      <div class="mt-8 flex items-center space-x-4">
+        <span class="text-gray-700 font-medium">{{
+          "blog.share.label" | translate
+        }}</span>
+        <a href="#" class="text-blue-600 hover:text-blue-800">
+          <i class="pi pi-facebook"></i>
+        </a>
+        <a href="#" class="text-blue-400 hover:text-blue-600">
+          <i class="pi pi-twitter"></i>
+        </a>
+        <a href="#" class="text-red-600 hover:text-red-800">
+          <i class="pi pi-envelope"></i>
+        </a>
+      </div> -->
+    </section>
+
+    <!-- Related Articles Section -->
+    <app-blogs-section ngSkipHydration></app-blogs-section>
+  </main>
+}
+
+<!-- Loading state -->
+@if (!blogData) {
+  <div class="flex justify-center items-center h-screen">
+    <div
+      class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"
+    ></div>
+    <span class="ml-4 text-gray-500">{{ "blog.loading" | translate }}</span>
+  </div>
+}

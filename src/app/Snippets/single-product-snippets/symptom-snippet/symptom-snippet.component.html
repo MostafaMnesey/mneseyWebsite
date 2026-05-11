@@ -1,0 +1,26 @@
+<section
+  [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
+  class="bg-[#004576]"
+>
+  <div class="grid grid-cols-2 p-5 items-center mx-auto page-width px-4">
+    <div class="img flex justify-center">
+      <img src="/new/mentholatumarabia-checker w 1 (1).png" alt="" />
+    </div>
+    <div class="content text-white">
+      <h2 class="text-xl md:text-2xl mb-3">
+        {{ "product.symptomChecker.title" | translate }}
+      </h2>
+      <p class="md:text-lg mb-2">
+        {{ "product.symptomChecker.description" | translate }}
+      </p>
+
+      <a routerLink="/symptom-checker-v2">
+        <button
+          class="mt-3 text-white py-2 px-6 rounded-full text-sm font-semibold bg-[#EF3E42]"
+        >
+          {{ "product.symptomChecker.cta" | translate }}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>

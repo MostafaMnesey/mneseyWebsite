@@ -1,0 +1,166 @@
+.slideOutContent {
+  position: fixed;
+  top: 0;
+  right: -400px; // Start off-screen
+  width: 400px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+
+  &.active {
+    right: 0;
+  }
+
+  .closeIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #666;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  .painArea {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .painAreaInfo {
+    margin-bottom: 30px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .productsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    .product {
+      flex: 1 1 calc(50% - 10px);
+      min-width: 250px;
+      
+      .imgWrap {
+        margin-bottom: 15px;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .name {
+        font-weight: bold;
+        margin-bottom: 10px;
+        
+        a {
+          color: inherit;
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .shortInfo {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+// Overlay when drawer is open
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+
+  .painArea {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .painAreaInfo {
+    margin-bottom: 30px;
+    
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+
+  .productsRow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+
+    .product {
+      .imgWrap {
+        margin-bottom: 15px;
+        
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .name {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .shortInfo {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .drawer {
+    width: 100%;
+  }
+}
+
+
+
+
+.painArea{
+    font-size: 30px;
+    color: rgb(2, 2, 123);
+}

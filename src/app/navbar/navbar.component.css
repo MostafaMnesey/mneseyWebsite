@@ -1,0 +1,157 @@
+/* @media (max-width: 768px) {
+  nav ul {
+    transition: all 0.3s ease-in-out;
+
+  }
+}
+
+@media  (max-width :1212px) {
+  .group{
+    transition: all 1s;
+  }
+
+  .group:hover + li{
+    display: block;
+  }
+
+  .group + li:hover{
+    display: block;
+
+  }
+}
+li{
+  transition: all .5s;
+}
+ ul li:hover a{
+  color: #00348D;
+}
+
+#contact:hover{
+  background: transparent !important;
+  color: red;
+}
+
+
+ */
+
+
+
+ /* Custom styles to maintain your original design */
+
+/* Ensure proper z-index for dropdowns */
+:host ::ng-deep .p-menu {
+  z-index: 999999 !important;
+}
+
+/* Custom styling for discover dropdown */
+:host ::ng-deep .discover-dropdown {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Maintain original button hover effects */
+:host ::ng-deep .p-button.p-button-text {
+  border: none !important;
+  background: transparent !important;
+  color: inherit !important;
+}
+
+:host ::ng-deep .p-button.p-button-text:hover {
+  background: var(--primary-100) !important;
+}
+
+/* Contact button specific styling */
+:host ::ng-deep .p-button:not(.p-button-text) {
+  border: none !important;
+}
+
+:host ::ng-deep .p-button:not(.p-button-text):hover {
+  transform: none !important;
+}
+/* Menu item styling */
+:host ::ng-deep .p-menu .p-menuitem-link {
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-menu .p-menuitem-link:hover {
+  background-color: transparent !important;
+}
+:host ::ng-deep .p-menu-item:not(.p-disabled) .p-menu-item-content{
+  display: block;
+  width: 100%;
+}
+
+
+
+
+/* Mobile menu styling */
+@media (max-width: 1211px) {
+  :host ::ng-deep .p-menu {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+
+  :host ::ng-deep .p-menu .p-menuitem-link {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 1212px) {
+  :host ::ng-deep .p-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 12rem !important;
+    background: white !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    border-radius: 0.375rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  :host ::ng-deep .p-menu .p-menuitem-link {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Language menu specific positioning */
+:host ::ng-deep .p-menu:last-child {
+  right: 0 !important;
+  left: auto !important;
+  width: 8rem !important;
+}
+
+/* Ensure proper button width on mobile */
+@media (max-width: 1211px) {
+  :host ::ng-deep .p-button.p-button-text {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (min-width: 1212px) {
+  :host ::ng-deep .p-button.p-button-text {
+    width: auto !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Custom styles for menu items text alignment */
+:host ::ng-deep .p-menuitem-text {
+  width: 100%;
+}
+
+/* Responsive menu positioning */
+:host ::ng-deep .discover-dropdown .p-menu {
+  width: 100%;
+}
+
+@media (min-width: 1212px) {
+  :host ::ng-deep .discover-dropdown .p-menu {
+    width: 12rem;
+  }
+}

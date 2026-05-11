@@ -1,0 +1,107 @@
+
+.radial{
+    background-image: radial-gradient(#2E89F6, #184A9A);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+
+  .radial-2{
+    background-image: radial-gradient(#E1423C, #B22C24);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+
+  .radial-3{
+    background-image: radial-gradient(#FA77AB, #e0014e);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+
+  .radial-4{
+    background-image: radial-gradient(#178F34, #3D1A54);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+
+  .radial-5{
+    background-image: radial-gradient(#493569, #30214E);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+  }
+/* products-slider.component.css */
+
+/* Custom Galleria Styles */
+:host ::ng-deep .custom-galleria {
+  .p-galleria-content {
+    height: 600px;
+  }
+
+  .p-galleria-item-wrapper {
+    height: 100%;
+  }
+
+  .p-galleria-item {
+    height: 100%;
+  }
+
+
+  .p-galleria-item-prev,
+  .p-galleria-item-next {
+    position: absolute;
+    bottom: 20px;
+    z-index: 50;
+    background-color: #AACCE5;
+    color: #6b7280;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+
+    &:hover {
+      background: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+
+}
+
+
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
+.slide-5 {
+  height: 100%;
+  width: 100%;
+}
+
+
+.p-galleria-nav-button{
+  background-color: #AACCE5;
+  color: #0067B1;
+}
+
+.p-galleria-nav-button:not(.p-disabled):hover {
+    background-color:#83bce5 !important;
+      color: #0067B1;
+
+
+}
