@@ -126,18 +126,18 @@
                           </h3>
                         </a>
 
-                        @if (shouldShowShopButton(product)) {
-                          <button
-                            (click)="where(product)"
-                            [ngStyle]="{ 'background-color': tab.bgColor }"
-                            class="text-white py-2 px-6 rounded-full text-sm font-semibold block w-full"
-                          >
-                            {{ "shop.shopNow" | translate }}
-                          </button>
-                        } @else {
-                          <!-- Empty space to maintain consistent height when no button -->
-                          <div class="h-10"></div>
-                        }
+                        <button
+                          (click)="where(product)"
+                          [disabled]="!hasAnyPurchaseOption(product)"
+                          [ngStyle]="{ 'background-color': hasAnyPurchaseOption(product) ? tab.bgColor : '#9ca3af' }"
+                          class="text-white py-2 px-6 rounded-full text-sm font-semibold block w-full transition-all"
+                          [ngClass]="{
+                            'cursor-not-allowed opacity-70': !hasAnyPurchaseOption(product),
+                            'cursor-pointer hover:brightness-90': hasAnyPurchaseOption(product)
+                          }"
+                        >
+                          {{ "shop.shopNow" | translate }}
+                        </button>
                       </div>
                     </div>
                   }

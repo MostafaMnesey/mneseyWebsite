@@ -29,13 +29,17 @@
                   </h3>
                 </a>
 
-                <a [routerLink]="['/product', product.slug]">
-                  <button
-                    class="text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full bg-[#0067B1] hover:bg-[#00348D]"
-                  >
-                    {{ "shop.shopNow" | translate }}
-                  </button>
-                </a>
+                <button
+                  [disabled]="!hasAnyPurchaseOption(product)"
+                  [class]="
+                    'text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full transition-all ' + 
+                    (hasAnyPurchaseOption(product) 
+                      ? 'bg-[#0067B1] hover:bg-[#00348D] cursor-pointer' 
+                      : 'bg-gray-400 cursor-not-allowed opacity-70')
+                  "
+                >
+                  {{ "shop.shopNow" | translate }}
+                </button>
               </div>
             </div>
           }
@@ -114,13 +118,17 @@
                 </h3>
               </a>
 
-              <a [routerLink]="['/product', product.slug]">
                 <button
-                  class="text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full bg-[#0067B1] hover:bg-[#00348D]"
+                  [disabled]="!hasAnyPurchaseOption(product)"
+                  [class]="
+                    'text-white py-2 px-6 test rounded-full text-sm font-semibold block w-full transition-all ' + 
+                    (hasAnyPurchaseOption(product) 
+                      ? 'bg-[#0067B1] hover:bg-[#00348D] cursor-pointer' 
+                      : 'bg-gray-400 cursor-not-allowed opacity-70')
+                  "
                 >
                   {{ "shop.shopNow" | translate }}
                 </button>
-              </a>
             </div>
           </div>
         </ng-template>
