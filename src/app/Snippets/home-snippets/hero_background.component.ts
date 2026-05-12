@@ -191,7 +191,7 @@ import Hls from 'hls.js';
 })
 export class HeroBackgroundComponent implements OnInit, OnDestroy {
   hlsUrl = input('');
-  bgImage = input('images/home-hero.jpg');
+  bgImage = input('images/home-hero.webp');
   isHome = input(false);
   injector = inject(Injector);
   @ViewChild('heroVideo') videoElement!: ElementRef<HTMLVideoElement>;
@@ -205,7 +205,7 @@ export class HeroBackgroundComponent implements OnInit, OnDestroy {
 
   // 🔥 Your actual URLs
   // hlsUrl = 'https://cdn.mentholatumarabia.com/videos/hero/master.m3u8';
-  // posterUrl = 'https://cdn.mentholatumarabia.com/video/hero/poster.png';
+  // posterUrl = 'https://cdn.mentholatumarabia.com/video/hero/poster.webp';
 
   // Component state
   videoLoaded = false;

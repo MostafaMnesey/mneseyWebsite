@@ -13,7 +13,7 @@
           class="rounded-full flex items-center my-3 bg-white py-4 px-4 cursor-pointer transition-all hover:bg-gray-100"
           (click)="openDialog(country)"
         >
-          <img [src]="country.flag" class="w-10 h-6 mr-2" />
+          <img loading="lazy" [src]="country.flag" class="w-10 h-6 mr-2" />
           <span class="text-[#00295A] flex-1 truncate">
             {{ "contact.countries." + country.key + ".name" | translate }}
           </span>

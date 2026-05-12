@@ -19,6 +19,7 @@
     "bump:major": "npm version major --no-git-tag-version",
     "optimize:logos": "node scripts/optimize-logos.js",
     "sitemap": "node scripts/generate-sitemap.js",
+    "convert:webp": "node scripts/convert-to-webp.js",
     "prebuild": "npm run sitemap"
   },
   "private": true,

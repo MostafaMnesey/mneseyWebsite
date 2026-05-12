@@ -110,8 +110,7 @@
                   fragment="top"
                   (click)="scrollToTop()"
                 >
-                  <img
-                    [src]="product.thumbnail"
+                  <img loading="lazy" [src]="product.thumbnail"
                     [alt]="product.name"
                     class="object-contain"
                   />

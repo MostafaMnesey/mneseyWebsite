@@ -709,11 +709,11 @@ export const appConfig: ApplicationConfig = {
         filter(req) {
           return (
             (req.method === 'GET' &&
-              (req.url.endsWith('.jpg') ||
-                req.url.endsWith('.png') ||
+              (req.url.endsWith('.webp') ||
+                req.url.endsWith('.webp') ||
                 req.url.endsWith('.svg') ||
                 req.url.endsWith('.webp') ||
-                req.url.endsWith('.jpeg') ||
+                req.url.endsWith('.webp') ||
                 req.url.endsWith('.gif') ||
                 req.url.endsWith('.ico') ||
                 req.url.endsWith('.bmp') ||

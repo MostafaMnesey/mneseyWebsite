@@ -8,10 +8,10 @@
     [containerStyle]="{ 'max-width': '640px' }"
   >
     <ng-template #item let-item>
-      <img [src]="item.image" style="width: 100%; display: block" />
+      <img loading="lazy" [src]="item.image" style="width: 100%; display: block" />
     </ng-template>
     <ng-template #thumbnail let-item>
-      <img [src]="item.thumbnailImageSrc" style="display: block" />
+      <img loading="lazy" [src]="item.thumbnailImageSrc" style="display: block" />
     </ng-template>
   </p-galleria>
 </div>

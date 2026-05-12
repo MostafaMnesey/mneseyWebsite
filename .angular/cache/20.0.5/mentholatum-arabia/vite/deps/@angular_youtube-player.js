@@ -47,10 +47,10 @@ import {
   ɵɵresetView,
   ɵɵrestoreView
 } from "./chunk-RXQTOWOF.js";
+import "./chunk-YVXMBCE5.js";
 import {
   fromEventPattern
 } from "./chunk-G6ECYYJH.js";
-import "./chunk-YVXMBCE5.js";
 import {
   BehaviorSubject,
   Observable,

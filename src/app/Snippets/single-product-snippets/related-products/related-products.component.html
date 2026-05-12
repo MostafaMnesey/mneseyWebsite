@@ -13,8 +13,7 @@
               <!-- Product Image -->
               <div class="p-6 flex items-center justify-center flex-grow">
                 <a [routerLink]="['/product', product.slug]">
-                  <img
-                    [src]="product.thumbnail"
+                  <img loading="lazy" [src]="product.thumbnail"
                     [alt]="product.name"
                     class="w-fit object-contain mx-auto"
                   />
@@ -100,8 +99,7 @@
             <!-- Product Image -->
             <div class="p-6 flex items-center justify-center flex-grow h-[70%]">
               <a [routerLink]="['/product', product.slug]">
-                <img
-                  [src]="product.thumbnail"
+                <img loading="lazy" [src]="product.thumbnail"
                   [alt]="product.name"
                   class="w-fit object-contain mx-auto"
                 />

@@ -24,8 +24,7 @@
               class="grid md:grid-cols-2 h-full relative"
               [attr.dir]="currentLang() === 'ar' ? 'rtl' : 'ltr'"
             >
-              <img
-                class="w-[60%] md:w-[20%] absolute top-2 start-0"
+              <img loading="lazy" class="w-[60%] md:w-[20%] absolute top-2 start-0"
                 [src]="slide.vectorImage"
                 alt=""
               />
@@ -46,8 +45,7 @@
                 class="flex items-center justify-center lg:h-full -order-1 md:order-none"
               >
                 <a [routerLink]="slide.routerLink">
-                  <img
-                    [src]="slide.image"
+                  <img loading="lazy" [src]="slide.image"
                     class="w-3/4 md:w-full relative z-20 block mx-auto"
                     [alt]="slide.title"
                   />
