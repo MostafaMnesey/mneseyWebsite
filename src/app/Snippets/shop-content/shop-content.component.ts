@@ -1,5 +1,5 @@
-import { Brand } from './../../core/interfaces/brand';
-import { CommonModule } from '@angular/common';
+import { Brand } from "./../../core/interfaces/brand";
+import { CommonModule } from "@angular/common";
 import {
   Component,
   computed,
@@ -7,18 +7,18 @@ import {
   signal,
   ViewEncapsulation,
   WritableSignal,
-} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog';
-import { SkeletonModule } from 'primeng/skeleton';
-import { TabsModule } from 'primeng/tabs';
-import { MainService } from '../../core/services/main.service';
-import { TranslatePipe } from '@ngx-translate/core';
-import { MyTranslateService } from '../../core/services/my-translate.service';
+} from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { ButtonModule } from "primeng/button";
+import { DialogModule } from "primeng/dialog";
+import { SkeletonModule } from "primeng/skeleton";
+import { TabsModule } from "primeng/tabs";
+import { MainService } from "../../core/services/main.service";
+import { TranslatePipe } from "@ngx-translate/core";
+import { MyTranslateService } from "../../core/services/my-translate.service";
 
 @Component({
-  selector: 'app-shop-content',
+  selector: "app-shop-content",
   imports: [
     ButtonModule,
     TabsModule,
@@ -28,8 +28,8 @@ import { MyTranslateService } from '../../core/services/my-translate.service';
     SkeletonModule,
     TranslatePipe,
   ],
-  templateUrl: './shop-content.component.html',
-  styleUrl: './shop-content.component.css',
+  templateUrl: "./shop-content.component.html",
+  styleUrl: "./shop-content.component.css",
   encapsulation: ViewEncapsulation.None,
 })
 export class ShopContentComponent {
@@ -37,7 +37,7 @@ export class ShopContentComponent {
   @Input() brand: any;
   showCountriesDialog = false;
   selectedProductCountries: any[] = [];
-  selectedProductName = '';
+  selectedProductName = "";
   selectedTab = signal(0);
 
   // Commented product arrays removed for brevity
@@ -45,7 +45,7 @@ export class ShopContentComponent {
 
   products: WritableSignal<any[]> = signal([]);
   brands: WritableSignal<Brand[]> = signal([]);
-  currentLang = signal('');
+  currentLang = signal("");
 
   tabs = computed(() => {
     return this.brands().map((brand, index) => {
@@ -57,7 +57,7 @@ export class ShopContentComponent {
       );
 
       // Define background colors for different brands (you can customize these)
-      const bgColors = ['#F9423A', '#002D62', '#3D1A54', '#E81E63', '#30214E'];
+      const bgColors = ["#F9423A", "#002D62", "#3D1A54", "#E81E63", "#30214E"];
 
       return {
         title: brand.name,
@@ -99,10 +99,10 @@ export class ShopContentComponent {
 
   ngOnInit(): void {
     if (window) {
-      this.geo = localStorage.getItem('geo');
+      this.geo = localStorage.getItem("geo");
     }
 
-    this.main.shopByBrand('').subscribe({
+    this.main.shopByBrand("").subscribe({
       next: (res) => {
         this.brands.set(res.brands);
         this.products.set(res.products);
@@ -133,17 +133,16 @@ export class ShopContentComponent {
     );
   }
   shouldShowShopButton(product: any): boolean {
-    const matched = product.countries?.find((country: any) => {
-      return (
-        country.name_en === this.geo.country &&
-        country.pivot.available_in_pharmacies === 0 &&
-        (!country.pivot.where_to_buy_link ||
-          country.pivot.where_to_buy_link === '')
-      );
-    });
+    return true;
+  }
 
-    // If match found, button should be hidden
-    return !matched;
+  hasAnyPurchaseOption(product: any): boolean {
+    if (!product || !product.countries) return false;
+    return product.countries.some(
+      (country: any) =>
+        country.pivot?.where_to_buy_link ||
+        country.pivot?.available_in_pharmacies === 1,
+    );
   }
 
   where(product: any) {
@@ -151,7 +150,7 @@ export class ShopContentComponent {
     if (this.geo) {
       // Parse the geo data if it's stored as a string
       const geoData =
-        typeof this.geo === 'string' ? JSON.parse(this.geo) : this.geo;
+        typeof this.geo === "string" ? JSON.parse(this.geo) : this.geo;
 
       // Get the country name and code from geo data
       const userCountry = geoData?.country;
@@ -173,7 +172,7 @@ export class ShopContentComponent {
           const buyLink = matchingCountry.pivot?.where_to_buy_link;
           if (buyLink) {
             // Open the link in a new tab
-            window.open(buyLink, '_blank');
+            window.open(buyLink, "_blank");
           }
         } else {
           // Filter out duplicate countries by ID before showing dialog
@@ -225,7 +224,7 @@ export class ShopContentComponent {
   // Add method to open country link
   openCountryLink(link: string) {
     if (link) {
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     }
   }
 }
