@@ -1,11 +1,11 @@
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon
-} from "./chunk-JQWXI5RI.js";
-import {
   Ripple,
   RippleModule
 } from "./chunk-SIWPDRLF.js";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon
+} from "./chunk-BEAKJTGH.js";
 import {
   BaseComponent
 } from "./chunk-THO7OEF2.js";

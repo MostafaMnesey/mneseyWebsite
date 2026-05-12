@@ -28,14 +28,23 @@ function sequence(steps, options = null) {
 function style(tokens) {
   return { type: AnimationMetadataType.Style, styles: tokens, offset: null };
 }
+function state(name, styles, options) {
+  return { type: AnimationMetadataType.State, name, styles, options };
+}
 function transition(stateChangeExpr, steps, options = null) {
   return { type: AnimationMetadataType.Transition, expr: stateChangeExpr, animation: steps, options };
 }
 function animation(steps, options = null) {
   return { type: AnimationMetadataType.Reference, animation: steps, options };
 }
+function animateChild(options = null) {
+  return { type: AnimationMetadataType.AnimateChild, options };
+}
 function useAnimation(animation2, options = null) {
   return { type: AnimationMetadataType.AnimateRef, animation: animation2, options };
+}
+function query(selector, animation2, options = null) {
+  return { type: AnimationMetadataType.Query, selector, animation: animation2, options };
 }
 var NoopAnimationPlayer = class {
   _onDoneFns = [];
@@ -267,9 +276,12 @@ export {
   animate,
   sequence,
   style,
+  state,
   transition,
   animation,
+  animateChild,
   useAnimation,
+  query,
   NoopAnimationPlayer,
   AnimationGroupPlayer,
   ɵPRE_STYLE
@@ -283,4 +295,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-RJOIWJEK.js.map
+//# sourceMappingURL=chunk-WI5SDMGC.js.map
