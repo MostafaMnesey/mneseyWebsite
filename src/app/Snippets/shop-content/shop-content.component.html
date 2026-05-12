@@ -104,8 +104,7 @@
                         class="p-6 flex items-center justify-center flex-grow sm:h-[65%] md:h-[55%] lg:h-[60%]"
                       >
                         <a [routerLink]="['/product', product.slug]">
-                          <img
-                            [src]="product.thumbnail"
+                          <img loading="lazy" [src]="product.thumbnail"
                             [alt]="product.name"
                             class="w-fit object-contain mx-auto"
                           />
@@ -126,18 +125,18 @@
                           </h3>
                         </a>
 
-                        @if (shouldShowShopButton(product)) {
-                          <button
-                            (click)="where(product)"
-                            [ngStyle]="{ 'background-color': tab.bgColor }"
-                            class="text-white py-2 px-6 rounded-full text-sm font-semibold block w-full"
-                          >
-                            {{ "shop.shopNow" | translate }}
-                          </button>
-                        } @else {
-                          <!-- Empty space to maintain consistent height when no button -->
-                          <div class="h-10"></div>
-                        }
+                        <button
+                          (click)="where(product)"
+                          [disabled]="!hasAnyPurchaseOption(product)"
+                          [ngStyle]="{ 'background-color': hasAnyPurchaseOption(product) ? tab.bgColor : '#9ca3af' }"
+                          class="text-white py-2 px-6 rounded-full text-sm font-semibold block w-full transition-all"
+                          [ngClass]="{
+                            'cursor-not-allowed opacity-70': !hasAnyPurchaseOption(product),
+                            'cursor-pointer hover:brightness-90': hasAnyPurchaseOption(product)
+                          }"
+                        >
+                          {{ "shop.shopNow" | translate }}
+                        </button>
                       </div>
                     </div>
                   }

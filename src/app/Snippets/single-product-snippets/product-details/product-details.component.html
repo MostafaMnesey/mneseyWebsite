@@ -5,8 +5,7 @@
     <div
       class="relative mx-auto w-3/4 border-2 border-gray-200 rounded-xl p-2 mb-4"
     >
-      <img
-        [src]="productDetails.product.images[0]"
+      <img loading="lazy" [src]="productDetails.product.images[0]"
         alt="Product Image"
         class="w-full lg:w-2/3 block mx-auto rounded-xl"
       />
@@ -26,16 +25,18 @@
       </p>
 
       <div class="buttons flex space-x-4">
-        @if (shouldShowShopButton(product)) {
-          <button
-            (click)="where()"
-            [class]="
-              'mt-3 bg-[#0067B1] hover:bg-[#00348D]  text-white py-2 px-6 rounded-full text-sm font-semibold'
-            "
-          >
-            {{ "product.shopNow" | translate }}
-          </button>
-        }
+        <button
+          (click)="where()"
+          [disabled]="!hasAnyPurchaseOption(productDetails.product)"
+          [class]="
+            'mt-3 text-white py-2 px-6 rounded-full text-sm font-semibold transition-all ' + 
+            (hasAnyPurchaseOption(productDetails.product) 
+              ? 'bg-[#0067B1] hover:bg-[#00348D] cursor-pointer' 
+              : 'bg-gray-400 cursor-not-allowed opacity-70')
+          "
+        >
+          {{ "product.shopNow" | translate }}
+        </button>
       </div>
     </div>
   </div>

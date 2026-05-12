@@ -17,7 +17,10 @@
     "bump:patch": "npm version patch --no-git-tag-version",
     "bump:minor": "npm version minor --no-git-tag-version",
     "bump:major": "npm version major --no-git-tag-version",
-    "optimize:logos": "node scripts/optimize-logos.js"
+    "optimize:logos": "node scripts/optimize-logos.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "convert:webp": "node scripts/convert-to-webp.js",
+    "prebuild": "npm run sitemap"
   },
   "private": true,
   "dependencies": {

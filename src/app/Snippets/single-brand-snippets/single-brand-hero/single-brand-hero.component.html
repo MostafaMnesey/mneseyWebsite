@@ -50,8 +50,7 @@
       >
         @if (brandData?.banner_image) {
           <ng-container>
-            <img
-              [src]="brandData?.banner_image"
+            <img fetchpriority="high" [src]="brandData?.banner_image"
               class=""
               alt="{{ brandData?.name }} Products"
             />

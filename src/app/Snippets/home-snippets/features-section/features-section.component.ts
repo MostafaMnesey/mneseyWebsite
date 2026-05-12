@@ -31,14 +31,14 @@ export class FeaturesSectionComponent {
 
   tests: Test[] = [
     {
-      imgSrc: 'new/Symptom Checker.png',
+      imgSrc: 'new/Symptom Checker.webp',
       title: 'home.features.symptomChecker.title',
       description: 'home.features.symptomChecker.description',
       Button: 'home.features.symptomChecker.buttonText',
       link: '/symptom-checker-v2',
     },
     {
-      imgSrc: 'new/Blink Test.png',
+      imgSrc: 'new/Blink Test.webp',
       title: 'home.features.blinkTest.title',
       description: 'home.features.blinkTest.description',
       Button: 'home.features.blinkTest.buttonText',

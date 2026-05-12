@@ -6,12 +6,20 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
     title: 'Mentholatum - Specialists in family healthcare for over 130 years',
+    data: {
+      description: 'Mentholatum - Specialists in family healthcare for over 130 years. Quality products for your family.',
+      keywords: 'mentholatum, healthcare, family health, deep heat, deep freeze'
+    }
   },
   {
     path: 'brands',
     loadComponent: () =>
       import('./pages/brands/brands.component').then((m) => m.BrandsComponent),
     title: 'Our Brands - Mentholatum',
+    data: {
+      description: 'Explore our wide range of trusted healthcare brands including Deep Heat, Deep Freeze, and Rohto.',
+      keywords: 'Deep Heat, Deep Freeze, Rohto, Mentholatum brands'
+    }
   },
   {
     path: 'brand/:id',

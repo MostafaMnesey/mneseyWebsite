@@ -137,4 +137,12 @@ export class RelatedProductsComponent {
         return 'bg-red-500';
     }
   }
+
+  hasAnyPurchaseOption(product: any): boolean {
+    if (!product || !product.countries) return false;
+    return product.countries.some((country: any) => 
+      country.pivot?.where_to_buy_link || 
+      country.pivot?.available_in_pharmacies === 1
+    );
+  }
 }

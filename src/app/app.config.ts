@@ -24,6 +24,7 @@ import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
+import { MessageService } from 'primeng/api';
 
 const MyPreset = definePreset(Aura, {
   primitive: {
@@ -708,11 +709,11 @@ export const appConfig: ApplicationConfig = {
         filter(req) {
           return (
             (req.method === 'GET' &&
-              (req.url.endsWith('.jpg') ||
-                req.url.endsWith('.png') ||
+              (req.url.endsWith('.webp') ||
+                req.url.endsWith('.webp') ||
                 req.url.endsWith('.svg') ||
                 req.url.endsWith('.webp') ||
-                req.url.endsWith('.jpeg') ||
+                req.url.endsWith('.webp') ||
                 req.url.endsWith('.gif') ||
                 req.url.endsWith('.ico') ||
                 req.url.endsWith('.bmp') ||
@@ -748,5 +749,6 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ),
+    MessageService,
   ],
 };

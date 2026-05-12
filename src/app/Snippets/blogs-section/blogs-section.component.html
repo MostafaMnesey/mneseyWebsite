@@ -35,8 +35,7 @@
           >
             <div class="">
               <!-- Aspect ratio set to 4:3 -->
-              <img
-                [src]="blog.thumbnail"
+              <img loading="lazy" [src]="blog.thumbnail"
                 alt="Blog Image"
                 class="w-full object-cover aspect-square"
               />
@@ -84,8 +83,7 @@
               class="bg-white rounded-xl shadow-lg m-2 overflow-hidden flex flex-col h-full"
             >
               <div>
-                <img
-                  [src]="blog.thumbnail"
+                <img loading="lazy" [src]="blog.thumbnail"
                   alt="Blog Image"
                   class="w-full object-cover aspect-auto"
                 />

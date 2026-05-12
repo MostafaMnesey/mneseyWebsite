@@ -24,7 +24,11 @@
             formControlName="name"
             autocomplete="off"
             [fluid]="true"
+            [ngClass]="{'ng-invalid ng-dirty': contactForm.get('name').touched && contactForm.get('name').invalid}"
           />
+          @if (contactForm.get('name').touched && contactForm.get('name').errors?.['required']) {
+            <small class="text-red-500 block mt-1">Name is required</small>
+          }
         </div>
 
         <div class="relative my-4">
@@ -39,7 +43,13 @@
             formControlName="email"
             autocomplete="off"
             [fluid]="true"
+            [ngClass]="{'ng-invalid ng-dirty': contactForm.get('email').touched && contactForm.get('email').invalid}"
           />
+          @if (contactForm.get('email').touched && contactForm.get('email').invalid) {
+            <small class="text-red-500 block mt-1">
+              {{ contactForm.get('email').errors?.['required'] ? 'Email is required' : 'Invalid email format' }}
+            </small>
+          }
         </div>
 
         <div class="relative my-4">
@@ -54,7 +64,11 @@
             formControlName="type"
             autocomplete="off"
             [fluid]="true"
+            [ngClass]="{'ng-invalid ng-dirty': contactForm.get('type').touched && contactForm.get('type').invalid}"
           />
+          @if (contactForm.get('type').touched && contactForm.get('type').errors?.['required']) {
+            <small class="text-red-500 block mt-1">Type of enquiry is required</small>
+          }
         </div>
 
         <div class="relative my-4">
@@ -67,7 +81,18 @@
             pTextarea
             [fluid]="true"
             formControlName="reason"
+            [ngClass]="{'ng-invalid ng-dirty': contactForm.get('reason').touched && contactForm.get('reason').invalid}"
           ></textarea>
+          @if (contactForm.get('reason').touched && contactForm.get('reason').errors?.['required']) {
+            <small class="text-red-500 block mt-1">Message is required</small>
+          }
+        </div>
+
+        <div class="relative my-4">
+          <div id="recaptcha-container"></div>
+          @if (contactForm.get('captchaAnswer').touched && !captchaToken) {
+            <small class="text-red-500">Please complete the CAPTCHA</small>
+          }
         </div>
 
         <button
@@ -94,7 +119,7 @@
     </div>
 
     <div class="mb-6 flex justify-center lg:justify-end">
-      <img src="/new/new logo.png" class="w-3/4 aspect-square" alt="" />
+      <img loading="lazy" src="/new/new logo.webp" class="w-3/4 aspect-square" alt="" />
     </div>
   </div>
 </section>

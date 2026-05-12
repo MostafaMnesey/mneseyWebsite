@@ -24,7 +24,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.supportingSociety.title',
         ),
-        icon: 'images/s1.png',
+        icon: 'images/s1.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.supportingSociety.description',
         ),
@@ -33,7 +33,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.trustAndRespect.title',
         ),
-        icon: 'images/s2.png',
+        icon: 'images/s2.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.trustAndRespect.description',
         ),
@@ -42,7 +42,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.happyCustomers.title',
         ),
-        icon: 'images/costumer.png',
+        icon: 'images/costumer.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.happyCustomers.description',
         ),
@@ -51,7 +51,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.ourPeople.title',
         ),
-        icon: 'images/social-justice.png',
+        icon: 'images/social-justice.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.ourPeople.description',
         ),
@@ -60,7 +60,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.meaningfulExistence.title',
         ),
-        icon: 'images/community 1.png',
+        icon: 'images/community 1.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.meaningfulExistence.description',
         ),
@@ -69,7 +69,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.continuousImprovement.title',
         ),
-        icon: 'images/efficacy 1.png',
+        icon: 'images/efficacy 1.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.continuousImprovement.description',
         ),
@@ -78,7 +78,7 @@ export class PhilosophyComponent {
         h: this.translateService.translate.instant(
           'about.ourPhilosophy.events.relentlessPassion.title',
         ),
-        icon: 'images/love.png',
+        icon: 'images/love.webp',
         p: this.translateService.translate.instant(
           'about.ourPhilosophy.events.relentlessPassion.description',
         ),

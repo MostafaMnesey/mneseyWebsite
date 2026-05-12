@@ -33,21 +33,21 @@ export class VideosSectionComponent {
 
   videoCards: VideoCard[] = [
     {
-      imgSrc: 'images/video_images/rhoto.png',
+      imgSrc: 'images/video_images/rhoto.webp',
       videoId: 'DeAeUs2dDPU',
       titleKey: 'home.videosSection.videoCards.card1.title',
       subtitleKey: 'home.videosSection.videoCards.card1.subtitle',
       cardIndex: 1,
     },
     {
-      imgSrc: 'images/video_images/deepheat.png',
+      imgSrc: 'images/video_images/deepheat.webp',
       videoId: 'bCpiTHkUHqA',
       titleKey: 'home.videosSection.videoCards.card2.title',
       subtitleKey: 'home.videosSection.videoCards.card2.subtitle',
       cardIndex: 2,
     },
     {
-      imgSrc: 'images/video_images/deepfreeze.png',
+      imgSrc: 'images/video_images/deepfreeze.webp',
       videoId: 'UTEjKzhJ0i0',
       titleKey: 'home.videosSection.videoCards.card3.title',
       subtitleKey: 'home.videosSection.videoCards.card3.subtitle',

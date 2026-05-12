@@ -1,11 +1,11 @@
 <section class="py-14 bg-gray-200 relative w-full mx-auto px-0">
   <!-- Background Pattern -->
   <div class="img absolute bottom-0 left-0 opacity-20">
-    <img src="images/Vector (7).png" alt="" />
+    <img loading="lazy" src="images/Vector (7).webp" alt="" />
   </div>
 
   <div class="img hidden lg:block absolute top-0 right-0 opacity-20">
-    <img src="images/Vector (8).png" alt="" />
+    <img loading="lazy" src="images/Vector (8).webp" alt="" />
   </div>
   <div class="page-width hidden lg:block">
     <div class="mx-auto">
@@ -13,8 +13,7 @@
         @for (card of videoCards; track card.cardIndex) {
           <div class="bg-white mx-2 rounded-2xl shadow-lg p-2 pb-3 text-center">
             <div class="relative">
-              <img
-                [src]="card.imgSrc"
+              <img loading="lazy" [src]="card.imgSrc"
                 alt="Video Thumbnail"
                 class="w-full aspect-video object-cover rounded-xl"
               />
@@ -58,8 +57,7 @@
       <ng-template let-card #item>
         <div class="bg-white mx-2 rounded-2xl shadow-lg p-2 pb-3 text-center">
           <div class="relative">
-            <img
-              [src]="card.imgSrc"
+            <img loading="lazy" [src]="card.imgSrc"
               alt="Video Thumbnail"
               class="w-full aspect-video object-cover rounded-xl"
             />

@@ -18,14 +18,14 @@
       >
         @if (!isScrolled()) {
           <app-optimized-logo
-            name="logo-white.png"
+            name="logo-white.webp"
             [width]="250"
             alt="Mentholatum Logo"
             cssClass="w-[250px]">
           </app-optimized-logo>
         } @else {
           <app-optimized-logo
-            name="logo.png"
+            name="logo.webp"
             [width]="250"
             alt="Mentholatum Logo"
             cssClass="w-[250px]">
@@ -216,10 +216,10 @@
     style="justify-content: space-between !important"
   >
     <a class="flex items-center space-x-3 rtl:space-x-reverse" routerLink="/">
-      <img src="/new/muk logo.png" class="w-[250px]" alt="" />
+      <img loading="lazy" src="/new/muk logo.webp" class="w-[250px]" alt="" />
 
       <!-- <app-optimized-logo
-        name="logo.png"
+        name="logo.webp"
         [width]="250"
         alt="Mentholatum Logo"
         cssClass="w-[250px]"
