@@ -214,29 +214,11 @@ export class HeroBackgroundComponent implements OnInit, OnDestroy {
   shouldLoadVideo = true;
 
   constructor() {
-    // Use afterNextRender for DOM-dependent operations
+    // Single afterNextRender call in constructor to handle initial setup
     afterNextRender(() => {
       if (isPlatformBrowser(this.platformId) && this.shouldLoadVideo) {
-        this.log('🎬 After next render - setting up video');
-        // Small delay to ensure ViewChild is properly initialized
-        setTimeout(() => {
-          if (this.videoElement?.nativeElement) {
-            this.setupHlsVideo();
-          } else {
-            this.log('❌ Video element not available after render, will retry');
-            // Retry after another render cycle
-            afterNextRender(() => {
-              if (this.videoElement?.nativeElement) {
-                this.setupHlsVideo();
-              } else {
-                this.log(
-                  '❌ Video element still not available, falling back to poster',
-                );
-                this.handleError();
-              }
-            });
-          }
-        }, 0);
+        this.log('🎬 Initial setupHlsVideo via afterNextRender');
+        this.setupHlsVideo();
       }
     });
   }
@@ -244,29 +226,6 @@ export class HeroBackgroundComponent implements OnInit, OnDestroy {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.checkDeviceCapabilities();
-      if (this.shouldLoadVideo) {
-        const delay = this.isHome() ? 0 : 500;
-
-        setTimeout(() => {
-          afterNextRender(
-            () => {
-              if (this.videoElement?.nativeElement) {
-                this.setupHlsVideo();
-              } else {
-                this.log('❌ Video element not available, retrying...');
-                afterNextRender(() => {
-                  if (this.videoElement?.nativeElement) {
-                    this.setupHlsVideo();
-                  } else {
-                    this.handleError();
-                  }
-                });
-              }
-            },
-            { injector: this.injector },
-          );
-        }, delay);
-      }
     } else {
       this.log('🖥️ Server-side rendering detected - skipping video setup');
       this.shouldLoadVideo = false;
@@ -310,9 +269,13 @@ export class HeroBackgroundComponent implements OnInit, OnDestroy {
     }
 
     const video = this.videoElement.nativeElement;
-    this.isLoading = true;
-    this.hasError = false;
-    this.retryCount = 0;
+    
+    // Avoid ExpressionChangedAfterItHasBeenCheckedError
+    setTimeout(() => {
+      this.isLoading = true;
+      this.hasError = false;
+      this.retryCount = 0;
+    }, 0);
 
     this.log('🚀 Starting HLS video setup...');
 
