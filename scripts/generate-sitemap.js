@@ -25,7 +25,7 @@ const staticRoutes = [
   { loc: '/dax',        changefreq: 'monthly', priority: '0.7' },
   { loc: '/symptom-checker-v2', changefreq: 'monthly', priority: '0.6' },
   { loc: '/terms',      changefreq: 'yearly',  priority: '0.4' },
-  { loc: '/privacy',    changefreq: 'yearly',  priority: '0.4' },
+  { loc: '/Privacy',    changefreq: 'yearly',  priority: '0.4' },
 ];
 
 const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
