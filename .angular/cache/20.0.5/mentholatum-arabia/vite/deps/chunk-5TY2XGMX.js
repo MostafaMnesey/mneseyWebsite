@@ -1,7 +1,6 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   sequence
-} from "./chunk-FBT7F76P.js";
+} from "./chunk-WI5SDMGC.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -9,17 +8,17 @@ import {
   RendererFactory2,
   ViewEncapsulation,
   setClassMetadata
-} from "./chunk-7I6RC7GH.js";
+} from "./chunk-6B3E3F3B.js";
 import {
   DOCUMENT,
   RuntimeError,
   inject,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-VQO4XGAE.js";
+} from "./chunk-RXQTOWOF.js";
 import {
   __spreadValues
-} from "./chunk-6DU2HRTW.js";
+} from "./chunk-GOMI4DH3.js";
 
 // node_modules/@angular/animations/fesm2022/animations.mjs
 var AnimationBuilder = class _AnimationBuilder {
@@ -494,4 +493,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-BSJD53DD.js.map
+//# sourceMappingURL=chunk-5TY2XGMX.js.map
