@@ -4,7 +4,7 @@
   <app-hero-background
     [isHome]="true"
     [hlsUrl]="'https://cdn.mentholatumarabia.com/videos/hero/master.m3u8'"
-    [bgImage]="'images/home-hero.jpg'"
+    [bgImage]="'images/home-hero.webp'"
   >
     <h1 class="text-white text-2xl lg:text-4xl md:text-5xl font-bold uppercase">
       {{ "home.hero.commitment" | translate }} <br />
@@ -19,7 +19,7 @@
     @defer (on viewport; prefetch on idle) {
       <app-hero-background
         [hlsUrl]="'https://cdn.mentholatumarabia.com/videos/second/master.m3u8'"
-        [bgImage]="'images/home-df.jpg'"
+        [bgImage]="'images/home-df.webp'"
       >
       </app-hero-background>
     } @placeholder {
@@ -39,13 +39,13 @@
 
   <!-- Background Pattern -->
   <!-- <div class="img absolute bottom-0 left-0 opacity-20">
-    <img src="images/Vector (7).png" alt="" />
+    <img loading="lazy" src="images/Vector (7).webp" alt="" />
   </div> -->
 
   <section #videos>
     @defer (on viewport(blogs)) {
       <div class="img hidden lg:block absolute top-0 right-0 opacity-20">
-        <img src="images/Vector (8).png" alt="" />
+        <img loading="lazy" src="images/Vector (8).webp" alt="" />
       </div>
       <app-videos-section></app-videos-section>
     }

@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './test-product.component.css',
 })
 export class TestProductComponent {
-  images = ['images/single.png', 'images/single-1.jpg'];
-  selectedImage = signal('images/single.png');
+  images = ['images/single.webp', 'images/single-1.webp'];
+  selectedImage = signal('images/single.webp');
   currentIndex = signal(0);
   activeIndex = signal<number | null>(null);
   product = signal({});
@@ -61,15 +61,15 @@ export class TestProductComponent {
   hearProducts = [
     {
       name: 'Heat Rub',
-      image: 'images/heat-brand/1.png',
+      image: 'images/heat-brand/1.webp',
     },
     {
       name: 'Max Strength',
-      image: 'images/heat-brand/2.png',
+      image: 'images/heat-brand/2.webp',
     },
     {
       name: 'Muscle Massage Roll-on Lotion',
-      image: 'images/heat-brand/3.png',
+      image: 'images/heat-brand/3.webp',
     },
   ];
 

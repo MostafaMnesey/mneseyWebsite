@@ -104,8 +104,7 @@
                         class="p-6 flex items-center justify-center flex-grow sm:h-[65%] md:h-[55%] lg:h-[60%]"
                       >
                         <a [routerLink]="['/product', product.slug]">
-                          <img
-                            [src]="product.thumbnail"
+                          <img loading="lazy" [src]="product.thumbnail"
                             [alt]="product.name"
                             class="w-fit object-contain mx-auto"
                           />

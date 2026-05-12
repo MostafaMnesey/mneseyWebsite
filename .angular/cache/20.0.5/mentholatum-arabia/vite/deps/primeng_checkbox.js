@@ -2,6 +2,10 @@ import {
   BaseEditableHolder
 } from "./chunk-GCX5NMOQ.js";
 import {
+  NG_VALUE_ACCESSOR,
+  NgControl
+} from "./chunk-RVCIBMVV.js";
+import {
   CheckIcon,
   MinusIcon
 } from "./chunk-BEAKJTGH.js";
@@ -17,10 +21,6 @@ import {
   SharedModule,
   k2 as k
 } from "./chunk-NQDLHBC3.js";
-import {
-  NG_VALUE_ACCESSOR,
-  NgControl
-} from "./chunk-RVCIBMVV.js";
 import {
   CommonModule,
   NgClass,
@@ -80,8 +80,8 @@ import {
   ɵɵresetView,
   ɵɵrestoreView
 } from "./chunk-RXQTOWOF.js";
-import "./chunk-G6ECYYJH.js";
 import "./chunk-YVXMBCE5.js";
+import "./chunk-G6ECYYJH.js";
 import "./chunk-RTGP7ALM.js";
 import "./chunk-GOMI4DH3.js";
 

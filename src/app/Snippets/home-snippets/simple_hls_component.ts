@@ -143,7 +143,7 @@ export class HlsHeroVideoComponent implements OnInit, OnDestroy {
 
   // 🔥 Change these to your R2 URLs
   hlsUrl = 'https://cdn.mentholatumarabia.com/videos/hero/master.m3u8';
-  posterUrl = '/images/hero.jpg';
+  posterUrl = '/images/hero.webp';
 
   videoLoaded = false;
   isLoading = false;

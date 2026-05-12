@@ -1,6 +1,6 @@
 <main class="w-full max-w-[1536px] mx-auto">
   <app-hero-background
-    [bgImage]="'images/blogs-hero.jpg'"
+    [bgImage]="'images/blogs-hero.webp'"
     [isHome]="false"
   >
     <h1 class="text-3xl text-center my-10">
@@ -52,8 +52,7 @@
             class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full"
           >
             <a [routerLink]="['/blogs', blog.slug]" class="block">
-              <img
-                [src]="blog.thumbnail"
+              <img loading="lazy" [src]="blog.thumbnail"
                 alt="Blog Image"
                 class="w-full object-cover aspect-square"
               />

@@ -183,7 +183,7 @@ export class HeroVideoComponent {
 
     // Create optimized poster image
     this.posterImageUrl = this.videoService.getOptimizedImageUrl(
-      'hero-poster.jpg',
+      'hero-poster.webp',
       {
         quality: '80',
         width: '1920',
