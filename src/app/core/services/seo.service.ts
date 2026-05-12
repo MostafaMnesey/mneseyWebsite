@@ -123,7 +123,7 @@ export class SeoService {
   }
 
   updateCanonicalUrl(url: string): void {
-    if (!isPlatformBrowser(this.platformId)) return;
+    // Removed isPlatformBrowser check to allow SSR rendering
 
     // Remove existing canonical link
     const existingCanonical = this.document.querySelector(
@@ -142,7 +142,7 @@ export class SeoService {
     currentUrl: string,
     alternateUrls?: { [locale: string]: string },
   ): void {
-    if (!isPlatformBrowser(this.platformId)) return;
+    // Removed isPlatformBrowser check to allow SSR rendering
 
     // Remove existing hreflang links
     const existingHreflangs = this.document.querySelectorAll('link[hreflang]');
@@ -187,7 +187,7 @@ export class SeoService {
   }
 
   updateStructuredData(data: any, id = 'structured-data'): void {
-    if (!isPlatformBrowser(this.platformId)) return;
+    // Removed isPlatformBrowser check to allow SSR rendering
 
     const scriptId = `structured-data-${id}`;
 
